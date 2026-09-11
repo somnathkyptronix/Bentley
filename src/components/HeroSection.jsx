@@ -1067,29 +1067,107 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
 
         @media (max-width: 768px) {
           .hero-3d-track {
-            height: 180vh; /* slightly shorter on mobile for quick access */
+            height: 160vh;
           }
           .hero-foreground-content {
-            padding: 6.2rem 0 3.5rem 0;
+            padding: 5.2rem 0.5rem 1.8rem 0.5rem;
           }
           .hero-content-bottom-left {
             padding-left: 0;
+            margin-bottom: 0.4rem;
+          }
+          .hero-rating-badge {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0.65rem;
           }
           .hero-title {
-            font-size: 2.3rem;
+            font-size: clamp(1.85rem, 7vw, 2.35rem);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+          }
+          .hero-subtitle {
+            font-size: 0.88rem;
+            line-height: 1.45;
+            margin-bottom: 0.8rem;
           }
           .hero-booking-form {
             grid-template-columns: 1fr;
+            gap: 0.5rem;
           }
           .hero-bar-submit {
             grid-column: span 1;
+            height: 42px;
+            font-size: 0.86rem;
           }
           .emarat-scroll-indicator {
             display: none;
           }
+          .room-entry-spotlight-layer {
+            padding-bottom: 4.8rem;
+          }
           .room-entry-card {
-            padding: 1.4rem;
-            margin: 0 0.5rem;
+            padding: 1.15rem 1.15rem;
+            margin: 0 0.35rem;
+          }
+          .room-entry-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+          }
+          .room-entry-desc {
+            font-size: 0.82rem;
+            line-height: 1.48;
+            margin-bottom: 0.9rem;
+          }
+          .room-specs-row {
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+          }
+          .room-spec-chip {
+            font-size: 0.72rem;
+            padding: 0.25rem 0.5rem;
+          }
+          .room-entry-actions {
+            flex-direction: column;
+            width: 100%;
+            gap: 0.5rem;
+          }
+          .room-action-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.65rem;
+            font-size: 0.82rem;
+          }
+        }
+
+        @media (max-width: 540px) {
+          .hero-actions {
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.75rem;
+          }
+          .hero-pill-cta {
+            width: 100%;
+            justify-content: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.82rem;
+          }
+          .hero-booking-bar-card {
+            padding: 0.6rem 0.75rem;
+            margin-bottom: 0.55rem;
+          }
+          .property-specs-banner {
+            padding: 0.35rem 0.6rem;
+            gap: 0.4rem;
+            justify-content: center;
+          }
+          .spec-dot {
+            display: none;
+          }
+          .spec-pill {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem;
           }
         }
       `}</style>

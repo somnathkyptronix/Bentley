@@ -37,11 +37,12 @@ export default function MobileStickyCTA({ onOpenBooking }) {
           left: 0;
           right: 0;
           z-index: 85;
-          background-color: rgba(248, 245, 229, 0.98);
+          background-color: rgba(20, 66, 49, 0.95);
           backdrop-filter: blur(12px);
-          border-top: 1px solid var(--color-sand);
-          padding: 0.75rem 1rem;
-          box-shadow: 0 -4px 18px rgba(46, 42, 28, 0.12);
+          -webkit-backdrop-filter: blur(12px);
+          border-top: 1px solid rgba(197, 162, 103, 0.4);
+          padding: 0.65rem 1rem;
+          box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.35);
         }
 
         .mobile-bar-inner {
@@ -59,29 +60,29 @@ export default function MobileStickyCTA({ onOpenBooking }) {
         }
 
         .from-label {
-          font-size: 0.68rem;
+          font-size: 0.65rem;
           text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--color-sage);
+          letter-spacing: 0.08em;
+          color: rgba(255, 255, 255, 0.6);
           font-weight: 700;
         }
 
         .price-tag {
-          font-size: 1.25rem;
+          font-size: 1.22rem;
           font-weight: 700;
-          color: var(--color-primary);
+          color: var(--color-gold);
           line-height: 1;
         }
 
         .price-tag small {
           font-size: 0.72rem;
           font-weight: 500;
-          color: var(--color-text-muted);
+          color: rgba(255, 255, 255, 0.7);
         }
 
         .rate-guarantee {
-          font-size: 0.65rem;
-          color: var(--color-olive);
+          font-size: 0.62rem;
+          color: #DFCA9B;
           font-weight: 600;
         }
 
@@ -92,21 +93,36 @@ export default function MobileStickyCTA({ onOpenBooking }) {
         }
 
         .mobile-quick-call-btn {
-          width: 44px;
-          height: 44px;
-          border-radius: var(--radius-sm);
-          border: 1.5px solid var(--color-primary);
-          background-color: transparent;
-          color: var(--color-primary);
+          width: 42px;
+          height: 42px;
+          border-radius: var(--radius-full);
+          border: 1.5px solid var(--color-gold);
+          background-color: rgba(197, 162, 103, 0.15);
+          color: var(--color-gold);
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: all var(--transition-fast);
+        }
+
+        .mobile-quick-call-btn:hover {
+          background-color: var(--color-gold);
+          color: var(--color-forest-dark);
         }
 
         .mobile-sticky-cta {
-          padding: 0.75rem 1.25rem;
-          font-size: 0.88rem;
+          padding: 0.65rem 1.15rem;
+          font-size: 0.82rem;
+          font-weight: 700;
           white-space: nowrap;
+          background-color: var(--color-gold);
+          color: var(--color-forest-dark);
+          border-radius: var(--radius-full);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .mobile-sticky-cta:hover {
+          background-color: #D8B77D;
         }
 
         @media (max-width: 768px) {
@@ -114,7 +130,7 @@ export default function MobileStickyCTA({ onOpenBooking }) {
             display: block;
           }
           body {
-            padding-bottom: 68px;
+            padding-bottom: 64px;
           }
         }
       `}</style>

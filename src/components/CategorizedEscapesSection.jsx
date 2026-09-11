@@ -407,12 +407,40 @@ export default function CategorizedEscapesSection({ onOpenBooking }) {
         }
 
         @media (max-width: 640px) {
-          .escapes-cards-grid {
-            grid-template-columns: 1fr;
+          .escapes-header {
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+          }
+          .escapes-title {
+            font-size: 1.85rem;
           }
           .category-tabs-row {
             width: 100%;
-            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 0.3rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            justify-content: flex-start;
+          }
+          .category-tabs-row::-webkit-scrollbar {
+            display: none;
+          }
+          .emarat-tab-btn {
+            white-space: nowrap;
+            padding: 0.5rem 0.95rem;
+            font-size: 0.74rem;
+            flex-shrink: 0;
+          }
+          .escapes-cards-grid {
+            grid-template-columns: 1fr;
+            gap: 1.4rem;
+          }
+          .escape-thumb-wrap {
+            height: 190px;
+          }
+          .escape-card-body {
+            padding: 1.2rem 1.1rem;
           }
         }
       `}</style>

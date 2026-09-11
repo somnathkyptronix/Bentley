@@ -134,8 +134,29 @@ button {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+  .container-wide {
+    padding: 0 1.15rem;
+  }
   .section-padding {
-    padding: 4.5rem 0;
+    padding: 4rem 0;
+  }
+  .section-header {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .container-wide {
+    padding: 0 1rem;
+  }
+  .section-padding {
+    padding: 3.2rem 0;
   }
 }
 

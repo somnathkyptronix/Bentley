@@ -254,7 +254,29 @@ export default function LuxuryRedefinedSection({ onExploreRooms }) {
             gap: 2rem;
           }
           .trio-media {
-            height: 400px;
+            height: 380px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .trio-media {
+            height: 290px;
+          }
+          .center-floating-circle-btn {
+            width: 84px;
+            height: 84px;
+          }
+          .circle-btn-text {
+            font-size: 0.68rem;
+          }
+          .trio-card-content {
+            padding: 1.4rem 1.2rem;
+          }
+          .trio-card-title {
+            font-size: 1.35rem;
+          }
+          .trio-cards-grid {
+            gap: 1.4rem;
           }
         }
       `}</style>

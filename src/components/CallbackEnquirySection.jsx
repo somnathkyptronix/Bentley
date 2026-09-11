@@ -476,8 +476,19 @@ export default function CallbackEnquirySection({ onOpenBooking }) {
         }
 
         @media (max-width: 640px) {
+          .callback-info-col, .callback-form-col {
+            padding: 2rem 1.25rem;
+          }
+          .callback-title {
+            font-size: 1.95rem;
+          }
           .form-row-2 {
             grid-template-columns: 1fr;
+            gap: 0;
+          }
+          .emarat-submit-btn {
+            padding: 0.85rem;
+            font-size: 0.84rem;
           }
         }
       `}</style>

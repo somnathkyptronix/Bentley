@@ -596,6 +596,44 @@ export default function Header({ onOpenBooking, onNavigate }) {
             display: none;
           }
         }
+
+        @media (max-width: 640px) {
+          .emarat-pill-btn {
+            display: none;
+          }
+          .brand-name {
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+          }
+          .brand-location {
+            font-size: 0.58rem;
+            letter-spacing: 0.08em;
+          }
+          .brand-logo-badge {
+            width: 40px;
+            height: 40px;
+          }
+          .mobile-drawer {
+            width: 88vw;
+            max-width: 360px;
+          }
+          .mobile-drawer-content {
+            padding: 1.5rem 1.2rem;
+          }
+          .mobile-nav-link {
+            font-size: 1.2rem;
+            padding: 0.45rem 0.5rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .brand-location {
+            display: none;
+          }
+          .brand-name {
+            font-size: 0.95rem;
+          }
+        }
       `}</style>
     </>
   );

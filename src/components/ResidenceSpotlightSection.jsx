@@ -420,14 +420,61 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
         }
 
         @media (max-width: 640px) {
+          .spotlight-media-col {
+            min-height: 250px;
+            height: 250px;
+          }
+          .spotlight-float-tag {
+            bottom: 0.8rem;
+            left: 0.8rem;
+            font-size: 0.74rem;
+            padding: 0.3rem 0.8rem;
+          }
           .spotlight-content-col {
-            padding: 2rem 1.5rem;
+            padding: 1.5rem 1.15rem;
+          }
+          .spotlight-room-title {
+            font-size: 1.8rem;
           }
           .spotlight-tabs-bar {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            border-radius: var(--radius-md);
+          }
+          .spotlight-tabs-bar::-webkit-scrollbar {
+            display: none;
+          }
+          .spotlight-tab {
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding: 0.75rem 1.1rem;
+            border-bottom: none;
+            border-right: 1px solid var(--color-sand);
           }
           .specs-boxes-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+          }
+          .spec-box {
+            padding: 0.75rem 0.85rem;
+          }
+          .spec-box-label {
+            font-size: 0.62rem;
+          }
+          .spec-box-value {
+            font-size: 0.82rem;
+          }
+          .spotlight-actions-row {
+            flex-direction: column;
+            width: 100%;
+            gap: 0.6rem;
+          }
+          .spotlight-actions-row button {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>

@@ -262,12 +262,43 @@ export default function ConnectivitySection({ onOpenBooking }) {
         }
 
         @media (max-width: 640px) {
+          .connectivity-title {
+            font-size: 2.1rem;
+          }
+          .connectivity-lead {
+            font-size: 0.94rem;
+            margin-bottom: 2rem;
+          }
           .connectivity-metrics-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+          }
+          .metric-card {
+            padding: 1.2rem 1rem;
+          }
+          .metric-big {
+            font-size: 2.1rem;
+            margin-bottom: 0.35rem;
+          }
+          .metric-tag {
+            font-size: 0.65rem;
+            margin-bottom: 0.35rem;
+          }
+          .metric-desc {
+            font-size: 0.76rem;
           }
           .circular-badges-row {
             flex-direction: column;
             align-items: flex-start;
+            gap: 1.2rem;
+          }
+          .circle-icon-ring {
+            width: 48px;
+            height: 48px;
+          }
+          .circle-title {
+            font-size: 1.1rem;
           }
         }
       `}</style>

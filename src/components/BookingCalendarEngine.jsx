@@ -1248,6 +1248,51 @@ export default function BookingCalendarEngine({
             grid-template-columns: 1fr;
           }
         }
+
+        @media (max-width: 640px) {
+          .booking-modal-backdrop {
+            padding: 0;
+            align-items: flex-end;
+          }
+          .booking-modal-window {
+            max-height: 96vh;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+          }
+          .booking-modal-header {
+            padding: 1rem 1.2rem;
+          }
+          .modal-logo {
+            width: 38px;
+            height: 38px;
+          }
+          .modal-title {
+            font-size: 1.15rem;
+          }
+          .modal-subline {
+            display: none;
+          }
+          .step-progress-bar {
+            padding: 0.75rem 1rem;
+            gap: 0.5rem;
+          }
+          .step-name {
+            display: none;
+          }
+          .calendar-month {
+            padding: 0.6rem;
+          }
+          .calendar-day {
+            font-size: 0.78rem;
+          }
+          .step-actions {
+            flex-direction: column;
+            gap: 0.6rem;
+          }
+          .step-actions button {
+            width: 100%;
+            justify-content: center;
+          }
+        }
       `}</style>
     </div>
   );

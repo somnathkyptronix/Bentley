@@ -239,6 +239,38 @@ export default function AboutPillarsSection({ onOpenBooking, onExploreRooms }) {
             height: 340px;
           }
         }
+
+        @media (max-width: 640px) {
+          .lifestyle-render-card {
+            margin-bottom: 2.8rem;
+          }
+          .render-image-container {
+            height: 230px;
+          }
+          .render-overlay-badge {
+            bottom: 0.8rem;
+            left: 0.8rem;
+            font-size: 0.76rem;
+            padding: 0.35rem 0.85rem;
+          }
+          .pillar-column {
+            padding: 0;
+          }
+          .pillar-index {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+          }
+          .pillar-title {
+            font-size: 1.4rem;
+          }
+          .pillar-text {
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+          }
+          .pillars-grid {
+            gap: 2rem;
+          }
+        }
       `}</style>
     </section>
   );

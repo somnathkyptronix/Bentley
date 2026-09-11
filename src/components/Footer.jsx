@@ -594,8 +594,20 @@ export default function Footer({ onOpenBooking, onNavigate }) {
         }
 
         @media (max-width: 768px) {
+          .emarat-pre-footer {
+            padding: 1.8rem 0;
+          }
+          .pre-footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+          }
+          .emarat-main-footer {
+            padding: 3.5rem 0 2rem 0;
+          }
           .emarat-footer-grid {
             grid-template-columns: 1fr;
+            gap: 2.2rem;
           }
           .brand-col {
             grid-column: span 1;
@@ -603,6 +615,11 @@ export default function Footer({ onOpenBooking, onNavigate }) {
           .bottom-strip-content {
             flex-direction: column;
             align-items: flex-start;
+            gap: 1rem;
+          }
+          .policy-links-row {
+            flex-wrap: wrap;
+            gap: 0.5rem;
           }
         }
       `}</style>
