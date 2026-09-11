@@ -1039,37 +1039,94 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
 
         @media (max-width: 768px) {
           .hero-3d-track {
-            height: 160vh;
+            height: 150vh;
           }
           .hero-foreground-content {
-            padding: 5.2rem 0.5rem 1.8rem 0.5rem;
+            padding: 4.8rem 0.6rem 4.8rem 0.6rem;
           }
           .hero-content-bottom-left {
             padding-left: 0;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
           }
           .hero-rating-badge {
-            margin-bottom: 0.5rem;
-            padding: 0.25rem 0.65rem;
+            margin-bottom: 0.4rem;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.72rem;
           }
           .hero-title {
-            font-size: clamp(1.85rem, 7vw, 2.35rem);
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
+            font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+            line-height: 1.08;
+            margin-bottom: 0.4rem;
           }
           .hero-subtitle {
-            font-size: 0.88rem;
-            line-height: 1.45;
-            margin-bottom: 0.8rem;
+            font-size: 0.84rem;
+            line-height: 1.4;
+            margin-bottom: 0.6rem;
+          }
+          /* Hide redundant check-availability button on mobile since the booking bar is right below */
+          #hero-primary-availability-btn {
+            display: none;
+          }
+          .hero-actions {
+            margin-bottom: 0.6rem;
+          }
+          .hero-pill-cta.secondary {
+            padding: 0.45rem 1rem;
+            font-size: 0.78rem;
+          }
+          /* 2x2 grid for mobile booking bar so all features are 100% visible */
+          .hero-booking-bar-card {
+            padding: 0.6rem 0.75rem;
+            margin-bottom: 0.55rem;
           }
           .hero-booking-form {
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.45rem 0.65rem;
+          }
+          .hero-field-separator {
+            display: none;
+          }
+          .hero-form-field {
+            padding: 0.15rem 0.25rem;
+          }
+          .hero-field-label {
+            font-size: 0.64rem;
+            margin-bottom: 0.15rem;
+          }
+          .hero-field-input {
+            font-size: 0.8rem;
+          }
+          .dog-checkbox-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.35rem 0.4rem;
+            font-size: 0.74rem;
           }
           .hero-bar-submit {
-            grid-column: span 1;
-            height: 42px;
-            font-size: 0.86rem;
+            grid-column: span 2;
+            height: 38px;
+            font-size: 0.82rem;
+            padding: 0.5rem;
+            margin-top: 0.2rem;
+          }
+          .property-specs-banner {
+            padding: 0.3rem 0.55rem;
+            gap: 0.35rem;
+            justify-content: center;
+            margin-bottom: 0.4rem;
+          }
+          .spec-dot {
+            display: none;
+          }
+          .spec-pill {
+            background: rgba(255, 255, 255, 0.14);
+            padding: 0.18rem 0.45rem;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+          }
+          .hero-trust-row {
+            display: none;
           }
           .emarat-scroll-indicator {
             display: none;
@@ -1111,35 +1168,18 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           }
         }
 
-        @media (max-width: 540px) {
-          .hero-actions {
-            flex-direction: column;
-            gap: 0.45rem;
-            margin-bottom: 0.75rem;
+        @media (max-width: 400px) {
+          .hero-title {
+            font-size: 1.65rem;
           }
-          .hero-pill-cta {
-            width: 100%;
-            justify-content: center;
-            padding: 0.6rem 1rem;
-            font-size: 0.82rem;
+          .hero-field-label {
+            font-size: 0.6rem;
           }
-          .hero-booking-bar-card {
-            padding: 0.6rem 0.75rem;
-            margin-bottom: 0.55rem;
+          .hero-field-input {
+            font-size: 0.75rem;
           }
-          .property-specs-banner {
-            padding: 0.35rem 0.6rem;
-            gap: 0.4rem;
-            justify-content: center;
-          }
-          .spec-dot {
-            display: none;
-          }
-          .spec-pill {
-            background: rgba(255, 255, 255, 0.12);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--radius-full);
-            font-size: 0.72rem;
+          .dog-checkbox-btn span {
+            font-size: 0.7rem;
           }
         }
       `}</style>
