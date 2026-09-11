@@ -426,37 +426,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           </div>
         </div>
 
-        {/* Floating 3D Camera Interactive Status Dock */}
-        <div className="camera-3d-dock">
-          <div className="camera-status-pill">
-            <div className={`camera-indicator-dot ${isInsideRoom ? 'inside' : 'exterior'}`}></div>
-            <span className="camera-view-text">
-              {isInsideRoom ? 'Inside: Living Room' : 'Exterior: Stone Cottage'}
-            </span>
-          </div>
-
-          {isInsideRoom && (
-            <button 
-              onClick={handleResetToExterior}
-              className="camera-reset-btn"
-              title="Return to Exterior View"
-            >
-              <RotateCcw size={13} />
-              <span>Step Outside</span>
-            </button>
-          )}
-
-          {!isInsideRoom && (
-            <button 
-              onClick={handleStepInsideTour}
-              className="camera-enter-btn"
-              title="Zoom into the cottage"
-            >
-              <Eye size={13} />
-              <span>Enter House</span>
-            </button>
-          )}
-        </div>
 
         {/* Emarat-Style Centered "SCROLL" Indicator at Bottom */}
         <div 
@@ -990,90 +959,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           transform: translateY(-2px);
         }
 
-        /* Top-Right Floating 3D Camera Status Dock */
-        .camera-3d-dock {
-          position: absolute;
-          top: 5.5rem;
-          right: 2rem;
-          z-index: 25;
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-        }
-
-        .camera-status-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          background: rgba(14, 30, 24, 0.75);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(197, 162, 103, 0.4);
-          padding: 0.4rem 0.85rem;
-          border-radius: var(--radius-full);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .camera-indicator-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          transition: background-color 0.4s ease;
-        }
-
-        .camera-indicator-dot.exterior {
-          background-color: #55B786;
-          box-shadow: 0 0 8px #55B786;
-        }
-
-        .camera-indicator-dot.inside {
-          background-color: #E7C970;
-          box-shadow: 0 0 10px #E7C970;
-        }
-
-        .camera-view-text {
-          font-size: 0.74rem;
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          color: #FFFFFF;
-        }
-
-        .camera-reset-btn,
-        .camera-enter-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.35rem;
-          padding: 0.4rem 0.85rem;
-          border-radius: var(--radius-full);
-          font-size: 0.74rem;
-          font-weight: 700;
-          cursor: pointer;
-          backdrop-filter: blur(10px);
-          transition: all var(--transition-fast);
-        }
-
-        .camera-reset-btn {
-          background: rgba(255, 255, 255, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.5);
-          color: #FFFFFF;
-        }
-
-        .camera-reset-btn:hover {
-          background: #FFFFFF;
-          color: var(--color-forest-dark);
-        }
-
-        .camera-enter-btn {
-          background: rgba(14, 30, 24, 0.75);
-          border: 1px solid var(--color-gold);
-          color: #FFFFFF;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .camera-enter-btn:hover {
-          background: var(--color-gold);
-          color: var(--color-forest-dark);
-        }
-
         /* Bottom Centered Scroll Prompt */
         .emarat-scroll-indicator {
           position: absolute;
@@ -1178,10 +1063,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           .hero-bar-submit {
             grid-column: span 2;
           }
-          .camera-3d-dock {
-            top: 5rem;
-            right: 1rem;
-          }
         }
 
         @media (max-width: 768px) {
@@ -1202,9 +1083,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           }
           .hero-bar-submit {
             grid-column: span 1;
-          }
-          .camera-3d-dock {
-            display: none;
           }
           .emarat-scroll-indicator {
             display: none;
