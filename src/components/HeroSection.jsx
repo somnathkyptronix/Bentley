@@ -235,16 +235,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
                   <ArrowRight size={16} />
                 </button>
 
-                {/* Direct 3D Room Entry Trigger */}
-                <button
-                  id="hero-3d-step-inside-trigger"
-                  onClick={handleStepInsideTour}
-                  className="hero-pill-cta tour-trigger"
-                  title="Experience smooth 3D camera zoom through the front door"
-                >
-                  <Sparkles size={15} className="sparkle-icon" />
-                  <span>Step Inside (3D)</span>
-                </button>
               </div>
 
               {/* Compact Hero Booking Bar - Sleek Glassmorphic Card */}
@@ -675,24 +665,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
-        .hero-pill-cta.tour-trigger {
-          background: linear-gradient(135deg, rgba(197, 162, 103, 0.35) 0%, rgba(20, 66, 49, 0.5) 100%);
-          backdrop-filter: blur(10px);
-          color: #FFFFFF;
-          border: 1.5px solid rgba(197, 162, 103, 0.7);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .hero-pill-cta.tour-trigger:hover {
-          background: var(--color-gold);
-          color: var(--color-forest-dark);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(197, 162, 103, 0.4);
-        }
-
-        .sparkle-icon {
-          color: #E7C970;
-        }
 
         /* Compact Hero Booking Bar */
         .hero-booking-bar-card {
