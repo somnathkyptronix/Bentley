@@ -211,9 +211,6 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
               {/* Supporting Copy */}
               <div className="hero-subtitle animate-fade-in">
                 <p className="hero-p-lead">
-                  Imagine waking up in the peaceful Lumsdale Valley, enjoying your morning coffee before heading out into the Peak District, then returning to a warm, cosy cottage after a day of adventure.
-                </p>
-                <p className="hero-p-welcome">
                   Welcome to <strong>2 Bentley Bridge Cottages</strong> — a characterful two-bedroom holiday cottage in Matlock, Derbyshire, created for memorable escapes with the people you love.
                 </p>
                 <p className="hero-p-sub">
@@ -630,25 +627,33 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
         }
 
         .hero-subtitle {
-          font-size: clamp(0.9rem, 1.15vw, 1.02rem);
-          color: #E8E2D0;
+          font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+          color: #FFFFFF;
           max-width: 680px;
-          line-height: 1.55;
-          margin-bottom: 1.3rem;
+          line-height: 1.6;
+          margin-bottom: 1.4rem;
           font-weight: 400;
-          text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+          text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
           display: flex;
           flex-direction: column;
-          gap: 0.6rem;
+          gap: 0.8rem;
         }
 
         .hero-subtitle p {
           margin: 0;
+          color: #FFFFFF;
         }
 
         .hero-p-lead {
-          font-size: 1.05em;
+          font-size: 1.04em;
           color: #FFFFFF;
+          line-height: 1.6;
+        }
+
+        .hero-p-sub {
+          font-size: 0.98em;
+          color: rgba(255, 255, 255, 0.94);
+          line-height: 1.6;
         }
 
         .hero-subtitle strong {
