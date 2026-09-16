@@ -382,7 +382,7 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
         /* Bottom Horizontal Tab Bar (Emarat Style) */
         .spotlight-tabs-bar {
           display: grid;
-          grid-template-columns: repeat(5, 1fr);
+          grid-template-columns: repeat(6, 1fr);
           background-color: #FFFFFF;
           border: 1px solid var(--color-sand);
           border-radius: var(--radius-md);
@@ -393,9 +393,16 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
         .spotlight-tab {
           display: flex;
           align-items: center;
-          gap: 0.8rem;
-          padding: 1.1rem 1.4rem;
+          justify-content: center;
+          gap: 0.65rem;
+          padding: 1.1rem 0.75rem;
           border-right: 1px solid var(--color-sand);
+          border-top: none;
+          border-bottom: none;
+          border-left: none;
+          background: none;
+          cursor: pointer;
+          white-space: nowrap;
           transition: all var(--transition-fast);
         }
 
@@ -413,14 +420,27 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
         }
 
         .tab-num {
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           font-weight: 600;
           color: var(--color-gold);
         }
 
         .tab-name {
-          font-size: 0.88rem;
+          font-size: 0.85rem;
           font-weight: 600;
+        }
+
+        @media (max-width: 1200px) {
+          .spotlight-tab {
+            padding: 0.95rem 0.5rem;
+            gap: 0.45rem;
+          }
+          .tab-num {
+            font-size: 1.05rem;
+          }
+          .tab-name {
+            font-size: 0.78rem;
+          }
         }
 
         @media (max-width: 1024px) {
@@ -430,8 +450,24 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
           .spotlight-media-col {
             min-height: 380px;
           }
+        }
+
+        @media (max-width: 960px) {
           .spotlight-tabs-bar {
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+          .spotlight-tabs-bar::-webkit-scrollbar {
+            display: none;
+          }
+          .spotlight-tab {
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding: 0.85rem 1.2rem;
+            border-right: 1px solid var(--color-sand);
           }
         }
 
