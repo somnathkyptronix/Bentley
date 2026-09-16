@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Calendar, Users, ArrowRight, Dog, Flame, Wifi, MapPin, 
-  Bed, Star, ShieldCheck, Check, Sparkles, Compass, Eye, ChevronDown, RotateCcw
+import {
+  Calendar, Users, ArrowRight, Dog, Flame, Wifi, MapPin, Bed, Star, ShieldCheck, Check, Sparkles, Compass, Eye, ChevronDown, RotateCcw, Bike, UtensilsCrossed
 } from 'lucide-react';
 import { tracker } from '../services/analytics';
 
@@ -380,44 +379,54 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
               <div className="room-entry-header">
                 <div className="room-badge">
                   <Sparkles size={14} className="sparkle-gold" />
-                  <span>STEPPING INSIDE &bull; 2 BENTLEY BRIDGE</span>
+                  <span>ENHANCE YOUR STAY &bull; 2 BENTLEY BRIDGE</span>
                 </div>
-                <span className="room-tag">The Living Room &bull; Hearth Sanctuary</span>
+                <span className="room-tag">Extras &bull; Experiences &bull; Local Services</span>
               </div>
 
               <h2 className="room-entry-title font-serif">
-                The Inglenook Fireside Retreat
+                Make Your Stay Even Better
               </h2>
 
               <p className="room-entry-desc">
-                Cross the stone threshold into quiet luxury. A roaring cast-iron wood-burning stove, 
-                authentic exposed Derbyshire gritstone, deep plush seating, and warm woollen throws await 
-                after a day exploring Lumsdale Valley waterfalls and Peak District trails.
+                Add the little extras that make your stay effortless. Hire an e-bike, stock the fridge before arrival, order logs for the burner, book a private chef, or discover local experiences and guided adventures around the Peak District.
               </p>
 
               <div className="room-specs-row">
-                <span className="room-spec-chip"><Flame size={14} /> Wood-Burning Stove + Kiln Logs</span>
-                <span className="room-spec-chip"><Users size={14} /> Cosy 4-Person Seating</span>
-                <span className="room-spec-chip"><Dog size={14} /> Fireside Dog Bed Included</span>
-                <span className="room-spec-chip"><Wifi size={14} /> High-Speed Wi-Fi &amp; 4K TV</span>
+                <span className="room-spec-chip"><Bike size={14} /> E-Bike Hire &amp; Local Guides</span>
+                <span className="room-spec-chip"><Flame size={14} /> Hot Tub &amp; Extra Log Bundles</span>
+                <span className="room-spec-chip"><UtensilsCrossed size={14} /> Private Chef &amp; Fridge Fill</span>
+                <span className="room-spec-chip"><Compass size={14} /> Attractions &amp; Walking Tours</span>
               </div>
 
               <div className="room-entry-actions">
                 <button 
                   onClick={() => {
-                    tracker.trackCheckAvailability('3D Room Entry Card');
-                    onOpenBooking();
+                    tracker.trackCheckAvailability('Hero Enhance Stay Card');
+                    const extrasEl = document.getElementById('enhance-stay');
+                    if (extrasEl) {
+                      extrasEl.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onOpenBooking();
+                    }
                   }}
                   className="room-action-btn primary"
                 >
                   <Calendar size={15} />
-                  <span>Book This Cottage</span>
+                  <span>Book Your Extras</span>
                 </button>
                 <button 
-                  onClick={handleScrollDownToNext}
+                  onClick={() => {
+                    const extrasEl = document.getElementById('enhance-stay');
+                    if (extrasEl) {
+                      extrasEl.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      handleScrollDownToNext();
+                    }
+                  }}
                   className="room-action-btn secondary"
                 >
-                  <span>Explore All Spaces &darr;</span>
+                  <span>Explore Experiences &darr;</span>
                 </button>
               </div>
             </div>
