@@ -921,8 +921,8 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
         }
 
         .room-specs-row {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 0.6rem;
           margin-bottom: 1.6rem;
         }
@@ -1077,6 +1077,7 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           }
         }
 
+        /* Tablet Devices (769px - 1024px) */
         @media (max-width: 1024px) {
           .hero-booking-form {
             grid-template-columns: 1fr 1fr;
@@ -1088,8 +1089,53 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           .hero-bar-submit {
             grid-column: span 2;
           }
+          .room-entry-spotlight-layer {
+            padding-bottom: 3.2rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+          .room-entry-card {
+            max-width: 650px;
+            padding: 1.6rem 2rem;
+            margin: 0 auto;
+          }
+          .room-entry-header {
+            gap: 0.5rem;
+          }
+          .room-badge {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.75rem;
+          }
+          .room-tag {
+            font-size: 0.75rem;
+          }
+          .room-entry-title {
+            font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+            margin-bottom: 0.65rem;
+          }
+          .room-entry-desc {
+            font-size: 0.9rem;
+            line-height: 1.55;
+            margin-bottom: 1.15rem;
+          }
+          .room-specs-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.55rem;
+            margin-bottom: 1.35rem;
+          }
+          .room-spec-chip {
+            font-size: 0.76rem;
+            padding: 0.35rem 0.65rem;
+          }
+          .room-action-btn {
+            padding: 0.7rem 1.4rem;
+            font-size: 0.86rem;
+          }
         }
 
+        /* Mobile & Small Tablets (max-width: 768px) */
         @media (max-width: 768px) {
           .hero-3d-track {
             height: 150vh;
@@ -1184,29 +1230,74 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           .emarat-scroll-indicator {
             display: none;
           }
+          
+          /* Spotlight Card on Mobile */
           .room-entry-spotlight-layer {
-            padding-bottom: 4.8rem;
+            padding-bottom: max(1.2rem, env(safe-area-inset-bottom, 1.2rem));
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            align-items: flex-end;
+            justify-content: center;
+            box-sizing: border-box;
           }
           .room-entry-card {
+            width: 100%;
+            max-width: 540px;
+            max-height: calc(100vh - 5.5rem);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             padding: 1.15rem 1.15rem;
-            margin: 0 0.35rem;
+            margin: 0 auto;
+            border-radius: 16px;
+            background: rgba(14, 30, 24, 0.93);
+          }
+          .room-entry-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.35rem;
+            margin-bottom: 0.7rem;
+          }
+          .room-badge {
+            font-size: 0.65rem;
+            letter-spacing: 0.07em;
+            padding: 0.22rem 0.6rem;
+            white-space: nowrap;
+          }
+          .room-tag {
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+            color: #DDD6C6;
+            line-height: 1.3;
           }
           .room-entry-title {
-            font-size: 1.35rem;
-            margin-bottom: 0.5rem;
+            font-size: clamp(1.3rem, 5vw, 1.65rem);
+            line-height: 1.18;
+            margin-bottom: 0.45rem;
           }
           .room-entry-desc {
             font-size: 0.82rem;
             line-height: 1.48;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.85rem;
           }
           .room-specs-row {
-            gap: 0.4rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
             margin-bottom: 1rem;
           }
           .room-spec-chip {
-            font-size: 0.72rem;
-            padding: 0.25rem 0.5rem;
+            font-size: 0.7rem;
+            padding: 0.35rem 0.5rem;
+            line-height: 1.25;
+            border-radius: 6px;
+            gap: 0.35rem;
+            white-space: normal;
+            justify-content: flex-start;
+          }
+          .room-spec-chip svg {
+            flex-shrink: 0;
+            width: 13px;
+            height: 13px;
           }
           .room-entry-actions {
             flex-direction: column;
@@ -1216,12 +1307,14 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           .room-action-btn {
             width: 100%;
             justify-content: center;
-            padding: 0.65rem;
-            font-size: 0.82rem;
+            padding: 0.68rem 1rem;
+            font-size: 0.84rem;
+            font-weight: 700;
           }
         }
 
-        @media (max-width: 400px) {
+        /* Compact Mobile Screens (<= 480px) */
+        @media (max-width: 480px) {
           .hero-title {
             font-size: 1.65rem;
           }
@@ -1233,6 +1326,98 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           }
           .dog-checkbox-btn span {
             font-size: 0.7rem;
+          }
+          .room-entry-spotlight-layer {
+            padding-bottom: 1rem;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+          }
+          .room-entry-card {
+            padding: 1rem 0.95rem;
+            border-radius: 14px;
+          }
+          .room-badge {
+            font-size: 0.6rem;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.55rem;
+          }
+          .room-tag {
+            font-size: 0.68rem;
+          }
+          .room-entry-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+          }
+          .room-entry-desc {
+            font-size: 0.78rem;
+            line-height: 1.42;
+            margin-bottom: 0.8rem;
+          }
+          .room-specs-row {
+            gap: 0.38rem;
+            margin-bottom: 0.9rem;
+          }
+          .room-spec-chip {
+            font-size: 0.68rem;
+            padding: 0.32rem 0.45rem;
+            gap: 0.3rem;
+          }
+          .room-action-btn {
+            padding: 0.62rem 0.85rem;
+            font-size: 0.82rem;
+          }
+        }
+
+        /* Ultra-Narrow Screens (<= 360px like Galaxy Fold front / small phones) */
+        @media (max-width: 360px) {
+          .room-specs-row {
+            grid-template-columns: 1fr;
+            gap: 0.32rem;
+          }
+          .room-badge {
+            font-size: 0.54rem;
+            letter-spacing: 0.03em;
+            padding: 0.18rem 0.45rem;
+          }
+          .room-tag {
+            font-size: 0.64rem;
+          }
+          .room-entry-title {
+            font-size: 1.15rem;
+          }
+          .room-entry-desc {
+            font-size: 0.75rem;
+          }
+          .room-action-btn {
+            font-size: 0.78rem;
+            padding: 0.58rem 0.75rem;
+          }
+        }
+
+        /* Landscape orientation / short viewport heights */
+        @media (max-height: 640px) and (orientation: landscape) {
+          .room-entry-spotlight-layer {
+            padding-bottom: 0.75rem;
+            align-items: center;
+          }
+          .room-entry-card {
+            max-height: 86vh;
+            padding: 0.85rem 1.4rem;
+          }
+          .room-entry-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+          }
+          .room-entry-desc {
+            font-size: 0.76rem;
+            line-height: 1.35;
+            margin-bottom: 0.6rem;
+          }
+          .room-specs-row {
+            margin-bottom: 0.65rem;
+          }
+          .room-entry-actions {
+            flex-direction: row;
           }
         }
       `}</style>
