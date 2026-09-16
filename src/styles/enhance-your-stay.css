@@ -182,23 +182,45 @@
   margin-top: 16px;
 }
 
-/* SERVICE CARD */
-.eys-card {
-  background: #ffffff;
-  border-radius: var(--eys-radius);
-  border: 1px solid var(--eys-border);
-  box-shadow: var(--eys-shadow);
+/* From Uiverse.io by Tiagoadag */ 
+.card {
+  width: 100%;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+  display: flex;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.card2 {
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  transition: all .2s;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  position: relative;
 }
 
-.eys-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--eys-shadow-hover);
-  border-color: var(--eys-gold);
+.card2:hover,
+.card:hover .card2 {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+/* SERVICE CARD */
+.eys-card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
 }
 
 .eys-card-media {
@@ -271,18 +293,23 @@
   flex-grow: 1;
 }
 
-.eys-card-title {
+.card2 .eys-card-title {
   font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
   font-size: 1.35rem;
-  color: var(--eys-forest);
+  color: #ffffff;
   margin-bottom: 8px;
   font-weight: 700;
+  transition: color 0.25s ease;
 }
 
-.eys-card-desc {
+.card:hover .card2 .eys-card-title {
+  color: #00ff75;
+}
+
+.card2 .eys-card-desc {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: var(--eys-text-muted);
+  color: #d1d5db;
   margin-bottom: 20px;
   flex-grow: 1;
 }
@@ -292,7 +319,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 16px;
-  border-top: 1px solid var(--eys-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   gap: 12px;
 }
 
@@ -301,19 +328,19 @@
   flex-direction: column;
 }
 
-.eys-price-label {
+.card2 .eys-price-label {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #88938b;
+  color: #9ca3af;
   font-weight: 600;
 }
 
-.eys-price-amount {
+.card2 .eys-price-amount {
   font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--eys-forest);
+  color: #00ff75;
 }
 
 .eys-card-actions {
@@ -321,24 +348,25 @@
   gap: 8px;
 }
 
-.eys-btn-outline {
+.card2 .eys-btn-outline {
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid var(--eys-border);
-  background: #ffffff;
-  color: var(--eys-forest);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.eys-btn-outline:hover {
-  background: var(--eys-cream-dark);
-  border-color: var(--eys-forest);
+.card2 .eys-btn-outline:hover {
+  background: rgba(0, 255, 117, 0.15);
+  border-color: #00ff75;
+  color: #00ff75;
 }
 
-.eys-btn-primary {
+.card2 .eys-btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -346,15 +374,16 @@
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 700;
-  background: var(--eys-forest);
-  color: #ffffff;
+  background: #00ff75;
+  color: #071910;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.eys-btn-primary:hover {
-  background: var(--eys-forest-light);
+.card2 .eys-btn-primary:hover {
+  background: #2eff8c;
+  box-shadow: 0 4px 16px rgba(0, 255, 117, 0.4);
   transform: translateY(-1px);
 }
 

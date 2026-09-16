@@ -130,69 +130,71 @@ export default function EnhanceYourStaySection({ onOpenAdmin, onOpenGuest }) {
         {/* SERVICES CARD GRID */}
         <div className="eys-services-grid">
           {filteredServices.map(service => (
-            <article key={service.id} className="eys-card">
-              
-              {/* CARD MEDIA */}
-              <div className="eys-card-media" onClick={() => handleOpenService(service)} style={{ cursor: 'pointer' }}>
-                <img 
-                  src={service.image} 
-                  alt={service.name} 
-                  className="eys-card-img"
-                  loading="lazy" 
-                />
-
-                <span className="eys-card-category-badge">
-                  {getServiceIcon(service.icon)}
-                  <span>{service.category}</span>
-                </span>
-
-                <span className={`eys-status-pill ${service.statusType}`}>
-                  {service.availabilityStatus}
-                </span>
-              </div>
-
-              {/* CARD BODY */}
-              <div className="eys-card-body">
-                <h3 
-                  className="eys-card-title" 
-                  onClick={() => handleOpenService(service)} 
-                  style={{ cursor: 'pointer' }}
-                >
-                  {service.name}
-                </h3>
+            <div key={service.id} className="card eys-card-wrapper">
+              <article className="card2 eys-card">
                 
-                <p className="eys-card-desc">
-                  {service.shortDesc}
-                </p>
+                {/* CARD MEDIA */}
+                <div className="eys-card-media" onClick={() => handleOpenService(service)} style={{ cursor: 'pointer' }}>
+                  <img 
+                    src={service.image} 
+                    alt={service.name} 
+                    className="eys-card-img"
+                    loading="lazy" 
+                  />
 
-                {/* CARD FOOTER */}
-                <div className="eys-card-footer">
-                  <div className="eys-card-price-block">
-                    <span className="eys-price-label">Starting from</span>
-                    <span className="eys-price-amount">{service.priceUnit}</span>
-                  </div>
+                  <span className="eys-card-category-badge">
+                    {getServiceIcon(service.icon)}
+                    <span>{service.category}</span>
+                  </span>
 
-                  <div className="eys-card-actions">
-                    <button 
-                      className="eys-btn-outline" 
-                      onClick={() => handleOpenService(service)}
-                    >
-                      <span>View Details</span>
-                    </button>
-
-                    <button 
-                      className="eys-btn-primary" 
-                      onClick={() => handleOpenService(service)}
-                    >
-                      <span>Book Now</span>
-                      <ArrowRight size={13} />
-                    </button>
-                  </div>
+                  <span className={`eys-status-pill ${service.statusType}`}>
+                    {service.availabilityStatus}
+                  </span>
                 </div>
 
-              </div>
+                {/* CARD BODY */}
+                <div className="eys-card-body">
+                  <h3 
+                    className="eys-card-title" 
+                    onClick={() => handleOpenService(service)} 
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {service.name}
+                  </h3>
+                  
+                  <p className="eys-card-desc">
+                    {service.shortDesc}
+                  </p>
 
-            </article>
+                  {/* CARD FOOTER */}
+                  <div className="eys-card-footer">
+                    <div className="eys-card-price-block">
+                      <span className="eys-price-label">Starting from</span>
+                      <span className="eys-price-amount">{service.priceUnit}</span>
+                    </div>
+
+                    <div className="eys-card-actions">
+                      <button 
+                        className="eys-btn-outline" 
+                        onClick={() => handleOpenService(service)}
+                      >
+                        <span>View Details</span>
+                      </button>
+
+                      <button 
+                        className="eys-btn-primary" 
+                        onClick={() => handleOpenService(service)}
+                      >
+                        <span>Book Now</span>
+                        <ArrowRight size={13} />
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </article>
+            </div>
           ))}
         </div>
 
