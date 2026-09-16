@@ -10,8 +10,9 @@ const seoArticles = [
     meta: 'Looking for a holiday cottage in Matlock? 2 Bentley Bridge Cottages provides a tranquil, limestone countryside haven minutes from Matlock centre, with wood-burning stove and private garden.',
     content: `When looking for a genuine holiday cottage in Matlock, travellers often find either modern town apartments or isolated remote lodges without amenities. 2 Bentley Bridge Cottages offers the idyllic middle ground: situated in the protected Upper Lumsdale valley, you enjoy profound silence, dark night skies, and birdsong, yet you are just four minutes drive (or a scenic 20-minute walk) from Crown Square, Matlock's bustling cafes, and local butcheries. Whether you plan to hike the Derwent Valley Mills, visit the Victorian parks, or curl up by the inglenook stove, our cottage is your welcoming home in Derbyshire.`,
     faq: [
-      { q: 'How close is 2 Bentley Bridge Cottages to Matlock town centre?', a: 'The cottage is located in Upper Lumsdale, approximately 1.2 miles (4 minutes drive or 20 minutes walk) from Matlock town centre and Crown Square.' },
-      { q: 'Is parking included at the cottage?', a: 'Yes, private dedicated off-road parking is included directly beside the cottage free of charge.' }
+      { q: 'How close is 2 Bentley Bridge Cottages to Matlock town centre?', a: 'The cottage is located in Upper Lumsdale, approximately 1.2 miles (4 minutes drive or 20 minutes walk) from Matlock town centre and Crown Square. A local shop is approximately 1.2 miles away and your nearest pub is around 0.6 miles away.' },
+      { q: 'Is parking available at the cottage?', a: 'Roadside parking is available on a first-come, first-served basis.' },
+      { q: 'Is there a housekeeping bond?', a: 'Yes, a £250 Good Housekeeping bond applies to your stay.' }
     ]
   },
   {
@@ -19,9 +20,9 @@ const seoArticles = [
     title: 'Peak District Cottage',
     h1: 'Character Peak District Holiday Cottage for Couples & Families',
     meta: 'Cosy 2-bedroom Peak District holiday cottage sleeping 4. Nestled near Bakewell, Chatsworth House, and Lumsdale gorge waterfalls. Book direct.',
-    content: `The Peak District was the UK's very first National Park, revered worldwide for its heather-clad gritstone moors, dramatic limestone dales, and timeless dry stone walls. 2 Bentley Bridge Cottages places you right on the southern threshold of this breathtaking national park. From your front door, embark on picturesque trail walks through the ancient mills of Lumsdale, or take a short 15-minute drive to explore Mam Tor, Monsal Head, and the grand halls of Chatsworth House. After days exploring the peaks, return to sink into the heritage roll-top bath and unwind by the fire.`,
+    content: `The Peak District was the UK's very first National Park, revered worldwide for its heather-clad gritstone moors, dramatic limestone dales, and timeless dry stone walls. 2 Bentley Bridge Cottages places you right on the southern threshold of this breathtaking national park. From your front door, embark on picturesque trail walks through the ancient mills of Lumsdale, or take a short drive to explore Bakewell, Chatsworth House, and Castleton. After days exploring the peaks, return to sink into comfortable beds and unwind by the woodburning stove.`,
     faq: [
-      { q: 'Can we access walking trails directly from the front door?', a: 'Absolutely. The famous Lumsdale Valley waterfall walk begins just 300 metres from your front door, linking to extensive Derbyshire footpath networks.' },
+      { q: 'Can we access walking trails directly from the front door?', a: 'Absolutely. The famous Lumsdale Valley waterfall walk begins just 300 metres from your front door, linking to extensive Derbyshire footpath networks, High Tor, and Riber Castle.' },
       { q: 'How far is Chatsworth House and Bakewell?', a: 'Bakewell is approximately 18 minutes away by car, and Chatsworth House & Gardens is approximately 20 minutes drive.' }
     ]
   },
@@ -29,11 +30,11 @@ const seoArticles = [
     id: 'dog-friendly-matlock',
     title: 'Dog-Friendly Cottage in Matlock',
     h1: 'Truly Dog-Friendly Holiday Cottage in Matlock, Derbyshire',
-    meta: 'Bring your dog to 2 Bentley Bridge Cottages. Fully enclosed stone garden, complimentary dog welcome hamper, and endless Peak District trails.',
-    content: `A countryside holiday isn't complete without your best friend. 2 Bentley Bridge Cottages proudly welcomes up to two well-behaved dogs. We have designed our space to make dog travel effortless: the cottage garden and sun patio are enclosed by dry stone walls and timber gates; we supply plush hound beds, drying towels, and stainless steel bowls; and our outdoor warm-water hose makes cleaning muddy paws after a woodland romp simple and stress-free. Most pubs and cafes in Matlock and Matlock Bath are warmly dog-friendly.`,
+    meta: 'Bring your dog to 2 Bentley Bridge Cottages. One well-behaved pet welcome, private patio garden, and endless Peak District trails.',
+    content: `A countryside holiday isn't complete without your best friend. Adventures are better together — 2 Bentley Bridge Cottages warmly welcomes one well-behaved pet, giving you the opportunity to enjoy Derbyshire's beautiful countryside together. With walking routes and scenic landscapes nearby, there's plenty for both two-legged and four-legged guests to discover.`,
     faq: [
-      { q: 'Is the cottage garden fully enclosed?', a: 'Yes, the garden patio is securely enclosed by traditional limestone dry stone walls and a latching timber gate.' },
-      { q: 'What is the pet surcharge?', a: 'Standard direct bookings have a small £25 flat fee per stay for up to 2 dogs, which is waived during our Dog-Friendly Break promotion.' }
+      { q: 'What is the pet policy at the cottage?', a: 'One well-behaved pet is welcome to stay at 2 Bentley Bridge Cottages.' },
+      { q: 'Is there a garden for pets?', a: 'Yes, you have access to a private patio garden with outdoor furniture. Please note there are steps leading down to the garden, so please take care.' }
     ]
   },
   {
@@ -52,10 +53,10 @@ const seoArticles = [
     title: 'Places to Stay Near Matlock',
     h1: 'Idyllic Boutique Places to Stay Near Matlock & Matlock Bath',
     meta: 'Discover why 2 Bentley Bridge Cottages is one of the highest-rated self-catering places to stay near Matlock and the Heights of Abraham.',
-    content: `If you are evaluating places to stay near Matlock, self-catering at 2 Bentley Bridge Cottages gives you the privacy and freedom that hotels simply cannot match. With two private bedrooms (one king double and one twin), a bespoke country kitchen for home cooking, and a dedicated stone garden, our cottage sleeps up to four guests in pure comfort. Enjoy the independence of self-catering coupled with luxury boutique hotel touches: Egyptian cotton bed linens, fluffy bathrobes, and complimentary Bramley botanical toiletries.`,
+    content: `If you are evaluating places to stay near Matlock, self-catering at 2 Bentley Bridge Cottages gives you the privacy and freedom to enjoy Derbyshire your way. With two private bedrooms (a comfortable double bedroom and a twin bedroom, both equipped with Smart TVs), a fully equipped kitchen/diner for home cooking, and a private patio garden, our cottage sleeps up to four guests in genuine comfort.`,
     faq: [
-      { q: 'How many people can stay at the cottage?', a: 'The cottage sleeps up to 4 guests across 2 bedrooms (1 King Double and 1 Twin with two single beds), plus space for an infant in a travel cot.' },
-      { q: 'Is there fast Wi-Fi for remote work during our stay?', a: 'Yes, high-speed fibre broadband is available throughout the cottage and patio garden.' }
+      { q: 'How many people can stay at the cottage?', a: 'The cottage sleeps up to 4 guests across 2 bedrooms (1 Double bedroom and 1 Twin bedroom, both featuring Smart TVs). Travel cot, highchair, and stairgate are also available.' },
+      { q: 'Is there fast Wi-Fi for remote work during our stay?', a: 'Yes, Wi-Fi is included throughout the cottage.' }
     ]
   },
   {

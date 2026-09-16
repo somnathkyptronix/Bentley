@@ -142,7 +142,7 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
             }}
           >
             <img 
-              src="/images/hero_cottage.jpg" 
+              src="/web/sc_1785924000_1205377_1.webp" 
               alt="2 Bentley Bridge Cottages - Picturesque Exterior in Upper Lumsdale" 
               className="stage-bg-image"
             />
@@ -160,7 +160,7 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
             }}
           >
             <img 
-              src="/images/living_room.jpg" 
+              src="/web/sc_1785924019_1205377_4.webp" 
               alt="2 Bentley Bridge Cottages - Cosy Living Room with Wood-Burning Stove" 
               className="stage-bg-image"
             />
@@ -199,17 +199,29 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
 
               {/* Master Headline - Stacked Luxury Serif */}
               <h1 className="hero-title font-serif animate-fade-in">
-                Escape to the Quiet<br />
-                Side of the Peak District
+                Your Cosy Peak<br />
+                District Escape
               </h1>
 
-              {/* Supporting Copy */}
-              <p className="hero-subtitle animate-fade-in">
-                Stay at <strong>2 Bentley Bridge Cottages</strong>, a cosy countryside retreat in Upper Lumsdale, 
-                minutes from Matlock and within easy reach of the Peak District.
-              </p>
+              {/* Tagline / Subheading */}
+              <div className="hero-tagline-badge animate-fade-in">
+                <span>Slow down. Explore more. Feel at home.</span>
+              </div>
 
-              {/* Primary Actions + 3D Interactive Tour Pill */}
+              {/* Supporting Copy */}
+              <div className="hero-subtitle animate-fade-in">
+                <p className="hero-p-lead">
+                  Imagine waking up in the peaceful Lumsdale Valley, enjoying your morning coffee before heading out into the Peak District, then returning to a warm, cosy cottage after a day of adventure.
+                </p>
+                <p className="hero-p-welcome">
+                  Welcome to <strong>2 Bentley Bridge Cottages</strong> — a characterful two-bedroom holiday cottage in Matlock, Derbyshire, created for memorable escapes with the people you love.
+                </p>
+                <p className="hero-p-sub">
+                  Whether you're planning a walking weekend, a family adventure, a romantic getaway or simply a few days away from everyday life, you'll have a comfortable and welcoming base to come back to.
+                </p>
+              </div>
+
+              {/* Primary Actions */}
               <div className="hero-actions animate-fade-in">
                 <button 
                   id="hero-primary-availability-btn"
@@ -226,15 +238,14 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
                 <button 
                   id="hero-explore-cottage-btn"
                   onClick={() => {
-                    tracker.track('ExploreCottageClick', { source: 'Hero Secondary CTA' });
+                    tracker.track('PlanYourStayClick', { source: 'Hero Secondary CTA' });
                     onExploreCottage();
                   }}
                   className="hero-pill-cta secondary"
                 >
-                  <span>Explore the Cottage</span>
+                  <span>Plan Your Stay</span>
                   <ArrowRight size={16} />
                 </button>
-
               </div>
 
               {/* Compact Hero Booking Bar - Sleek Glassmorphic Card */}
@@ -602,14 +613,42 @@ export default function HeroSection({ onOpenBooking, onExploreCottage }) {
           text-shadow: 0 4px 24px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.5);
         }
 
+        .hero-tagline-badge {
+          display: inline-flex;
+          align-items: center;
+          background: rgba(197, 162, 103, 0.22);
+          border: 1px solid rgba(197, 162, 103, 0.45);
+          backdrop-filter: blur(8px);
+          color: #F8F5E5;
+          font-family: var(--font-serif);
+          font-style: italic;
+          font-size: clamp(0.95rem, 1.3vw, 1.25rem);
+          padding: 0.35rem 1.1rem;
+          border-radius: var(--radius-full);
+          margin-bottom: 1.1rem;
+          text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+
         .hero-subtitle {
-          font-size: clamp(0.96rem, 1.4vw, 1.15rem);
+          font-size: clamp(0.9rem, 1.15vw, 1.02rem);
           color: #E8E2D0;
-          max-width: 660px;
-          line-height: 1.5;
-          margin-bottom: 1.2rem;
+          max-width: 680px;
+          line-height: 1.55;
+          margin-bottom: 1.3rem;
           font-weight: 400;
           text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+        }
+
+        .hero-subtitle p {
+          margin: 0;
+        }
+
+        .hero-p-lead {
+          font-size: 1.05em;
+          color: #FFFFFF;
         }
 
         .hero-subtitle strong {

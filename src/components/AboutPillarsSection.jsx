@@ -1,30 +1,49 @@
 import React from 'react';
-import { Home, Shield, Sparkles, ArrowRight, Check } from 'lucide-react';
+import { Home, Shield, Sparkles, ArrowRight, Check, Coffee, Flame, Heart, Compass } from 'lucide-react';
 import { tracker } from '../services/analytics';
 
 export default function AboutPillarsSection({ onOpenBooking, onExploreRooms }) {
+  const arrivalSteps = [
+    { num: '01', title: 'Put your bags down.', desc: 'Unpack and settle into your peaceful Derbyshire retreat.' },
+    { num: '02', title: 'Make yourself a cup of tea.', desc: 'Boil the kettle in the fully equipped farmhouse kitchen.' },
+    { num: '03', title: 'Light the fire.', desc: 'Enjoy the comforting warmth of the woodburning stove.' },
+    { num: '04', title: 'And let your holiday begin.', desc: 'Slow down, relax, and immerse yourself in the Peak District.' }
+  ];
+
   return (
     <section id="about" className="about-pillars-section section-padding">
       <div className="container-wide">
         
-        {/* Section Header (Emarat Style) */}
+        {/* Section Header */}
         <div className="section-header emarat-align-left">
-          <span className="eyebrow">ABOUT THE PROPERTY</span>
+          <span className="eyebrow">A PLACE TO FEEL AT HOME</span>
           <h2 className="section-title font-serif">
-            Peaceful Country Living, Crafted With Purpose
+            Your Own Little Corner of Derbyshire
           </h2>
           <p className="section-lead">
-            2 Bentley Bridge Cottages is an authentic two-bedroom stone holiday retreat nestled in Upper Lumsdale, 
-            Derbyshire. Designed for couples, small families, and guests travelling with a dog who seek genuine 
-            Peak District seclusion without sacrificing modern luxury.
+            From the moment you arrive, you'll find a cottage full of character, warmth and those little comforts that make a holiday feel easy.
           </p>
+          <p className="section-sublead">
+            Original exposed stone walls and charming period features give the cottage a genuine Derbyshire feel, while modern facilities make your stay comfortable.
+          </p>
+        </div>
+
+        {/* 4-Step Arrival Cadence Bar */}
+        <div className="arrival-cadence-grid">
+          {arrivalSteps.map((step, idx) => (
+            <div key={idx} className="arrival-step-card">
+              <span className="step-number font-serif">{step.num}</span>
+              <h4 className="step-title font-serif">{step.title}</h4>
+              <p className="step-desc">{step.desc}</p>
+            </div>
+          ))}
         </div>
 
         {/* Large Wide Lifestyle Feature Card (Emarat Style) */}
         <div className="lifestyle-render-card">
           <div className="render-image-container">
             <img 
-              src="/images/living_room.jpg" 
+              src="/web/sc_1785924019_1205377_4.webp" 
               alt="Cosy living room at 2 Bentley Bridge Cottages with roaring wood stove" 
               className="render-img"
               loading="lazy"
@@ -105,8 +124,74 @@ export default function AboutPillarsSection({ onOpenBooking, onExploreRooms }) {
 
         .emarat-align-left {
           text-align: left;
-          max-width: 820px;
-          margin: 0 0 3.2rem 0;
+          max-width: 860px;
+          margin: 0 0 2.5rem 0;
+        }
+
+        .section-sublead {
+          font-size: 1.05rem;
+          color: var(--color-charcoal);
+          opacity: 0.85;
+          line-height: 1.6;
+          margin-top: 0.6rem;
+        }
+
+        .arrival-cadence-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+          margin-bottom: 3.5rem;
+        }
+
+        .arrival-step-card {
+          background: #FFFFFF;
+          border: 1px solid var(--color-sand);
+          border-radius: var(--radius-md);
+          padding: 1.6rem 1.4rem;
+          box-shadow: var(--shadow-sm);
+          position: relative;
+          transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .arrival-step-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
+          border-color: var(--color-gold);
+        }
+
+        .step-number {
+          font-size: 1.6rem;
+          color: var(--color-gold);
+          display: block;
+          margin-bottom: 0.6rem;
+          line-height: 1;
+        }
+
+        .step-title {
+          font-size: 1.12rem;
+          color: var(--color-forest);
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+        }
+
+        .step-desc {
+          font-size: 0.88rem;
+          color: var(--color-charcoal);
+          opacity: 0.8;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        @media (max-width: 900px) {
+          .arrival-cadence-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 540px) {
+          .arrival-cadence-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .lifestyle-render-card {

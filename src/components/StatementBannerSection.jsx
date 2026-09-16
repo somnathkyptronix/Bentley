@@ -10,44 +10,52 @@ export default function StatementBannerSection({ onOpenBooking }) {
       <div className="container statement-container">
         <div className="statement-content">
           <span className="statement-eyebrow">
-            <Sparkles size={14} className="sparkle-gold" /> UPPER LUMSDALE CONSERVATION SANCTUARY
+            <Sparkles size={14} className="sparkle-gold" /> YOUR PERFECT DERBYSHIRE BASE
           </span>
 
           <h2 className="statement-title font-serif">
-            Where Country Life Falls<br />
-            <span className="title-gold-italic">Perfectly Into Place.</span>
+            Walk. Explore. Relax.<br />
+            <span className="title-gold-italic">Repeat.</span>
           </h2>
 
           <p className="statement-subtext">
-            Stay at 2 Bentley Bridge Cottages — a cosy countryside retreat in Upper Lumsdale, 
-            minutes from Matlock and within easy reach of the Peak District.
+            Whether your ideal holiday means early morning walks, long lunches, family adventures, cosy evenings by the fire or simply escaping the everyday routine, <strong>2 Bentley Bridge Cottages gives you the freedom to enjoy Derbyshire your way.</strong>
           </p>
 
-          <div className="statement-specs-pill-bar">
-            <span className="spec-item"><Users size={14} /> Sleeps 4</span>
-            <span className="spec-dot">&bull;</span>
-            <span className="spec-item"><Bed size={14} /> 2 Bedrooms</span>
-            <span className="spec-dot">&bull;</span>
-            <span className="spec-item"><Dog size={14} /> Dog Friendly</span>
-            <span className="spec-dot">&bull;</span>
-            <span className="spec-item"><Flame size={14} /> Wood-Burning Stove</span>
-            <span className="spec-dot">&bull;</span>
-            <span className="spec-item"><Wifi size={14} /> Wi-Fi</span>
-            <span className="spec-dot">&bull;</span>
-            <span className="spec-item"><MapPin size={14} /> Matlock &bull; DE4 5LB</span>
+          <div className="statement-cadence-pills">
+            <span className="cadence-item">Wake up somewhere peaceful.</span>
+            <span className="cadence-dot">&bull;</span>
+            <span className="cadence-item">Spend the day exploring.</span>
+            <span className="cadence-dot">&bull;</span>
+            <span className="cadence-item">Come home and get cosy.</span>
+            <span className="cadence-dot">&bull;</span>
+            <span className="cadence-item">Then do it all again tomorrow.</span>
           </div>
 
-          <div className="statement-cta-wrap">
-            <button 
-              onClick={() => {
-                tracker.trackCheckAvailability('Statement Banner CTA');
-                onOpenBooking();
-              }}
-              className="statement-gold-pill-btn"
-            >
-              <Calendar size={16} />
-              <span>CHECK AVAILABILITY &amp; RATES</span>
-            </button>
+          <div className="statement-ready-box">
+            <h3 className="statement-ready-title font-serif">Ready for your Peak District escape?</h3>
+            <div className="statement-cta-wrap">
+              <button 
+                onClick={() => {
+                  tracker.trackCheckAvailability('Statement Banner Check Availability');
+                  onOpenBooking();
+                }}
+                className="statement-gold-pill-btn"
+              >
+                <Calendar size={16} />
+                <span>CHECK AVAILABILITY</span>
+              </button>
+
+              <button 
+                onClick={() => {
+                  tracker.trackCheckAvailability('Statement Banner Book Your Stay');
+                  onOpenBooking();
+                }}
+                className="statement-white-pill-btn"
+              >
+                <span>BOOK YOUR STAY</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -117,35 +125,49 @@ export default function StatementBannerSection({ onOpenBooking }) {
           line-height: 1.65;
         }
 
-        .statement-specs-pill-bar {
+        .statement-cadence-pills {
           display: inline-flex;
           align-items: center;
           flex-wrap: wrap;
           justify-content: center;
           gap: 0.8rem;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.08);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(197, 162, 103, 0.35);
-          padding: 0.75rem 1.8rem;
+          border: 1px solid rgba(197, 162, 103, 0.3);
+          padding: 0.85rem 1.8rem;
           border-radius: var(--radius-full);
           margin-bottom: 2.8rem;
         }
 
-        .spec-item {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.4rem;
-          font-size: 0.88rem;
-          font-weight: 600;
-          color: #FFFFFF;
+        .cadence-item {
+          font-family: var(--font-serif);
+          font-size: 0.98rem;
+          font-style: italic;
+          color: #F8F5E5;
         }
 
-        .spec-item svg {
+        .cadence-dot {
           color: var(--color-gold);
+          opacity: 0.6;
         }
 
-        .spec-dot {
-          color: rgba(197, 162, 103, 0.5);
+        .statement-ready-box {
+          margin-top: 1rem;
+        }
+
+        .statement-ready-title {
+          font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+          color: #FFFFFF;
+          margin-bottom: 1.5rem;
+          font-weight: 500;
+        }
+
+        .statement-cta-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.2rem;
+          flex-wrap: wrap;
         }
 
         .statement-gold-pill-btn {
@@ -168,6 +190,29 @@ export default function StatementBannerSection({ onOpenBooking }) {
           background-color: #FFFFFF;
           transform: translateY(-2px);
           box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .statement-white-pill-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.65rem;
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.65);
+          color: #FFFFFF;
+          font-size: 0.84rem;
+          font-weight: 800;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          padding: 0.95rem 2.2rem;
+          border-radius: var(--radius-full);
+          transition: all var(--transition-smooth);
+        }
+
+        .statement-white-pill-btn:hover {
+          background-color: #FFFFFF;
+          color: var(--color-forest-dark);
+          border-color: #FFFFFF;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 640px) {

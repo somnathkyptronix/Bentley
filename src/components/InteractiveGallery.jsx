@@ -7,75 +7,159 @@ const galleryItems = [
     id: 1,
     title: '2 Bentley Bridge Cottages Exterior',
     category: 'The Cottage',
-    image: '/images/hero_cottage.jpg',
-    description: 'Charming limestone cottage in Upper Lumsdale with wisteria and manicured English cottage garden.'
+    image: '/web/sc_1785924000_1205377_1.webp',
+    description: 'Charming characterful stone holiday cottage in Matlock, Derbyshire, set in the peaceful Lumsdale Valley.'
   },
   {
     id: 2,
-    title: 'Cosy Evening Hearth & Stove',
-    category: 'Living Spaces',
-    image: '/images/living_room.jpg',
-    description: 'Crackling wood-burning stove in the rustic stone inglenook, plush sofa, and dog resting by the warmth.'
+    title: 'Front Entrance & Porch',
+    category: 'The Cottage',
+    image: '/web/sc_1785924008_1205377_2.webp',
+    description: 'Welcoming front entrance with flowering cottage garden beds and traditional stone architecture.'
   },
   {
     id: 3,
-    title: 'Master Bedroom with Countryside Views',
-    category: 'Bedrooms',
-    image: '/images/bedroom_master.jpg',
-    description: 'Crisp Egyptian cotton linens, exposed stone feature wall, and morning views across the valley.'
+    title: 'Cosy Sitting Room & Woodburning Stove',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924019_1205377_4.webp',
+    description: 'The warm focal point of the cottage: exposed stone wall, roaring woodburning stove, and comfortable seating.'
   },
   {
     id: 4,
-    title: 'Bespoke Shaker Farmhouse Kitchen',
+    title: 'Sitting Room & Open-Tread Staircase',
     category: 'Living Spaces',
-    image: '/images/kitchen.jpg',
-    description: 'Handcrafted sage cabinetry, Belfast sink, dining table for 4, and artisan welcome treats.'
+    image: '/web/sc_1785924014_1205377_3.webp',
+    description: 'Characterful living area featuring open-tread timber staircase, deep leather sofa, and period details.'
   },
   {
     id: 5,
-    title: 'Sun-Drenched Garden & Stone Patio',
-    category: 'Outside',
-    image: '/images/garden_patio.jpg',
-    description: 'Private enclosed terrace, teak dining table, vibrant flower borders, and panoramic valley backdrop.'
+    title: 'Exposed Stone Archway to Dining Area',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924025_1205377_5.webp',
+    description: 'Striking original exposed gritstone archway framing the seamless flow from sitting room into dining.'
   },
   {
     id: 6,
-    title: 'Heritage Blue Roll-Top Clawfoot Bath',
+    title: 'Dining Area & Period Stonework',
     category: 'Living Spaces',
-    image: '/images/bathroom.jpg',
-    description: 'Freestanding roll-top bathtub, brass fittings, rainfall shower, and luxury Bramley bath products.'
+    image: '/web/sc_1785924031_1205377_6.webp',
+    description: 'Dining table with chairs for four guests beneath the stone archway for shared holiday breakfasts and evening meals.'
   },
   {
     id: 7,
-    title: 'Lumsdale Valley Waterfalls & Historic Ruins',
-    category: 'Lumsdale',
-    image: '/images/lumsdale_valley.jpg',
-    description: 'Enchanting waterfall cascading past ruined 18th-century stone mills, just a 3-minute walk away.'
+    title: 'Dining Table View to Shaker Kitchen',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924036_1205377_7.webp',
+    description: 'Inviting dining area looking toward the bespoke sage green shaker cabinetry and morning window light.'
   },
   {
     id: 8,
-    title: 'Cosy Twin Bedroom with Wool Blankets',
-    category: 'Bedrooms',
-    image: '/images/bedroom_twin.jpg',
-    description: 'Two comfortable single beds with checked wool throws and peaceful tree-lined views.'
+    title: 'Fully Fitted Sage Shaker Kitchen',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924051_1205377_10.webp',
+    description: 'Bespoke shaker-style kitchen equipped with electric oven, gas hob, microwave, fridge, and dishwasher.'
   },
   {
     id: 9,
-    title: 'Peak District Panoramic Walking Trails',
-    category: 'Peak District',
-    image: '/images/peak_district.jpg',
-    description: 'Endless rolling hills, dry stone walls, and scenic ridge paths easily reachable from your doorstep.'
+    title: 'Fitted Kitchen Hob & Cabinetry',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924041_1205377_8.webp',
+    description: 'Gas hob, extractor hood, microwave, and sage shaker cupboards stocked with all culinary essentials.'
   },
   {
     id: 10,
-    title: 'Original Heritage Emblem & Crest',
+    title: 'Traditional Belfast Sink & Worktops',
+    category: 'Living Spaces',
+    image: '/web/sc_1785924046_1205377_9.webp',
+    description: 'Deep ceramic Belfast sink with mixer tap, wooden worktops, and cottage casement window.'
+  },
+  {
+    id: 11,
+    title: 'Master Double Bedroom & Smart TV',
+    category: 'Bedrooms',
+    image: '/web/sc_1785924057_1205377_11.webp',
+    description: 'Inviting double bedroom with wooden bedstead, crisp bed linen, bedside lighting, and dedicated Smart TV.'
+  },
+  {
+    id: 12,
+    title: 'Double Bedroom Bedstead & Bedside Comfort',
+    category: 'Bedrooms',
+    image: '/web/sc_1785924062_1205377_12.webp',
+    description: 'Peaceful bedroom retreat designed for a restful night after long countryside rambles.'
+  },
+  {
+    id: 13,
+    title: 'Master Bedroom Wardrobe & Window',
+    category: 'Bedrooms',
+    image: '/web/sc_1785924067_1205377_13.webp',
+    description: 'Spacious wardrobe storage and cottage window overlooking peaceful Upper Lumsdale.'
+  },
+  {
+    id: 14,
+    title: 'Twin Bedroom with Two Single Beds',
+    category: 'Bedrooms',
+    image: '/web/sc_1785924072_1205377_14.webp',
+    description: 'Two comfortable single beds with cheerful bumblebee accent cushions for children or friends.'
+  },
+  {
+    id: 15,
+    title: 'Twin Bedroom Wall-Mounted Smart TV',
+    category: 'Bedrooms',
+    image: '/web/sc_1785924077_1205377_15.webp',
+    description: 'Twin bedroom equipped with wall-mounted Smart TV and natural daylight.'
+  },
+  {
+    id: 16,
+    title: 'Stone Steps Leading to Private Patio',
+    category: 'Outside',
+    image: '/web/sc_1785924104_1205377_20.webp',
+    description: 'Character stone steps with safety handrail leading down to the private enclosed rear patio garden.'
+  },
+  {
+    id: 17,
+    title: 'Private Patio Garden with Bistro Furniture',
+    category: 'Outside',
+    image: '/web/sc_1786456245_1205377_27.webp',
+    description: 'Sun-trap patio corner with bistro table and cushioned chairs for morning coffees or evening drinks.'
+  },
+  {
+    id: 18,
+    title: 'Patio Garden & Lumsdale Valley Views',
+    category: 'Outside',
+    image: '/web/sc_1786456264_1205377_30.webp',
+    description: 'Elevated view from steps looking across stone roofs to the lush green hills of the Peak District.'
+  },
+  {
+    id: 19,
+    title: 'Enclosed Courtyard & Outbuilding',
+    category: 'Outside',
+    image: '/web/sc_1786456238_1205377_26.webp',
+    description: 'Overhead view of the slate paved private patio, stone outbuilding, and drystone boundary walls.'
+  },
+  {
+    id: 20,
+    title: 'Rear Stone Cottage Elevation',
     category: 'The Cottage',
-    image: '/logo.jpg',
-    description: 'The historic brand mark of 2 Bentley Bridge Cottages Upper Lumsdale, Matlock.'
+    image: '/web/sc_1785924110_1205377_21.webp',
+    description: 'Authentic Derbyshire gritstone masonry and rear cottage door opening onto the patio steps.'
+  },
+  {
+    id: 21,
+    title: 'Paved Pathway & Traditional Stone Barn',
+    category: 'Outside',
+    image: '/web/sc_1785924117_1205377_22.webp',
+    description: 'Slate path and gravel borders beside historic stone walls leading to the garden entrance.'
+  },
+  {
+    id: 22,
+    title: 'Historic Derbyshire Stone Courtyard',
+    category: 'The Cottage',
+    image: '/web/sc_1786348558_1205377_23.webp',
+    description: 'Heritage stone architecture and slate roofing characteristic of picturesque Matlock settlements.'
   }
 ];
 
-const categories = ['All', 'The Cottage', 'Bedrooms', 'Living Spaces', 'Outside', 'Lumsdale', 'Peak District'];
+const categories = ['All', 'The Cottage', 'Bedrooms', 'Living Spaces', 'Outside'];
 
 export default function InteractiveGallery({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState('All');

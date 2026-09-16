@@ -3,156 +3,156 @@ import { Waves, Mountain, Compass, ArrowRight, MapPin, Clock, ExternalLink } fro
 import { tracker } from '../services/analytics';
 
 const categories = [
-  { id: 'waterfalls', name: 'VALLEYS & WATERFALLS', icon: Waves },
-  { id: 'trails', name: 'PEAK DISTRICT TRAILS', icon: Mountain },
-  { id: 'towns', name: 'HISTORIC TOWNS & PUBS', icon: Compass }
+  { id: 'walks', name: 'STEP OUTSIDE & EXPLORE', icon: Mountain },
+  { id: 'local', name: 'MORE THAN A PLACE TO STAY', icon: Compass },
+  { id: 'daytrips', name: 'MAKE A DAY OF IT', icon: Waves }
 ];
 
 const escapesData = {
-  waterfalls: [
+  walks: [
     {
       id: 1,
-      tag: 'UPPER LUMSDALE',
-      title: 'Lumsdale Valley & Waterfall Gorge',
-      desc: 'Enchanting cascading waterfalls and moss-covered ruins of 18th-century stone watermills right outside your front gate.',
+      tag: 'ON YOUR DOORSTEP',
+      title: 'Lumsdale Valley & Waterfalls',
+      desc: 'Explore Lumsdale Valley, known for its woodland scenery, historic mill ruins and beautiful waterfalls right outside your front gate.',
       distance: '300 metres',
       time: '3 min walk',
-      image: '/images/lumsdale_valley.jpg',
+      image: '/web/sc_1786456264_1205377_30.webp',
       mapsUrl: 'https://maps.google.com/?q=Lumsdale+Valley+Matlock'
     },
     {
       id: 2,
-      tag: 'DERWENT VALLEY',
-      title: 'Cromford Mills & Historic Canal',
-      desc: 'UNESCO World Heritage Site where industrial pioneer Sir Richard Arkwright birthed the water-powered factory system in 1771.',
-      distance: '3.2 miles',
-      time: '9 min drive',
-      image: '/images/hero_cottage.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Cromford+Mills+Matlock'
+      tag: 'LOCAL LANDMARK',
+      title: 'High Tor & Footpaths',
+      desc: 'Follow the surrounding footpaths up to High Tor, offering dramatic limestone cliffs and panoramic views over Derbyshire.',
+      distance: '1.5 miles',
+      time: '5 min drive',
+      image: '/web/sc_1786456238_1205377_26.webp',
+      mapsUrl: 'https://maps.google.com/?q=High+Tor+Matlock'
     },
     {
       id: 3,
-      tag: 'PEAK DISTRICT',
-      title: 'Monsal Dale & Water Mill',
-      desc: 'Dramatically sculpted valley where the River Wye winds under the famous stone railway viaduct.',
-      distance: '11 miles',
-      time: '24 min drive',
-      image: '/images/peak_district.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Monsal+Dale+Bakewell'
+      tag: 'HISTORIC LANDMARK',
+      title: 'Riber Castle & Country Trails',
+      desc: 'Set off along countryside bridleways towards the iconic 19th-century Riber Castle overlooking Matlock and the valley.',
+      distance: '1.8 miles',
+      time: '6 min drive',
+      image: '/web/sc_1785924000_1205377_1.webp',
+      mapsUrl: 'https://maps.google.com/?q=Riber+Castle+Matlock'
     },
     {
       id: 4,
-      tag: 'MATLOCK',
-      title: 'Hall Leys Riverside Gardens',
-      desc: 'Award-winning riverside public park with boating lake, sunken floral gardens, and riverside promenade.',
-      distance: '1.2 miles',
-      time: '4 min drive',
-      image: '/images/garden_patio.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Hall+Leys+Park+Matlock'
+      tag: 'CYCLING & BRIDLEWAYS',
+      title: 'Derbyshire Countryside Cycling',
+      desc: 'Cyclists can enjoy scenic routes through the surrounding Derbyshire countryside and into the wider Peak District trail network.',
+      distance: 'On Doorstep',
+      time: 'Immediate access',
+      image: '/web/sc_1785924117_1205377_22.webp',
+      mapsUrl: 'https://maps.google.com/?q=Matlock+Derbyshire+Cycling+Routes'
     }
   ],
-  trails: [
+  local: [
     {
       id: 5,
-      tag: 'HIGH PEAKS',
-      title: 'Mam Tor & The Great Ridge',
-      desc: 'One of England’s most celebrated ridge walks with 360-degree panoramic views over the Hope Valley and Edale.',
-      distance: '22 miles',
-      time: '38 min drive',
-      image: '/images/peak_district.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Mam+Tor+Peak+District'
+      tag: 'LOCAL TOWN',
+      title: 'Matlock Town & Hall Leys Park',
+      desc: 'Explore independent shops, cafés, pubs and restaurants, or take a relaxing walk through Hall Leys Park.',
+      distance: '1.2 miles',
+      time: '4 min drive',
+      image: '/web/sc_1785924008_1205377_2.webp',
+      mapsUrl: 'https://maps.google.com/?q=Matlock+Town+Centre'
     },
     {
       id: 6,
-      tag: 'MONSAL TRAIL',
-      title: 'Headstone Viaduct & Tunnels Trail',
-      desc: 'Traffic-free 8.5-mile trail along the former Midland Railway through dramatic limestone tunnels. Perfect for walking and cycling.',
-      distance: '10 miles',
-      time: '22 min drive',
-      image: '/images/peak_district.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Monsal+Trail+Bakewell'
+      tag: 'RIVERSIDE DESTINATION',
+      title: 'Matlock Bath',
+      desc: 'Enjoy the riverside atmosphere, traditional attractions and independent eateries of this distinctive Derbyshire destination.',
+      distance: '2.5 miles',
+      time: '8 min drive',
+      image: '/web/sc_1786348558_1205377_23.webp',
+      mapsUrl: 'https://maps.google.com/?q=Matlock+Bath+Derbyshire'
     },
     {
       id: 7,
-      tag: 'CURBAR EDGE',
-      title: 'Curbar & Froggatt Gritstone Edges',
-      desc: 'Dramatic gritstone escarpments overlooking heather moors and ancient silver birch woodlands.',
-      distance: '12 miles',
-      time: '25 min drive',
-      image: '/images/peak_district.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Curbar+Edge+Derbyshire'
+      tag: 'CABLE CAR & CAVERNS',
+      title: 'Heights of Abraham',
+      desc: 'Take the famous cable car into the hills and enjoy spectacular Peak District views, woodland walks and cavern experiences.',
+      distance: '2.8 miles',
+      time: '8 min drive',
+      image: '/web/sc_1785924110_1205377_21.webp',
+      mapsUrl: 'https://maps.google.com/?q=Heights+of+Abraham+Matlock+Bath'
     },
     {
       id: 8,
-      tag: 'LIMESTONE WAY',
-      title: 'High Peak Trail & National Cycle Way',
-      desc: 'Historic railway trackbed traversing the White Peak limestone plateau, suitable for dogs and family strollers.',
-      distance: '6 miles',
-      time: '14 min drive',
-      image: '/images/garden_patio.jpg',
-      mapsUrl: 'https://maps.google.com/?q=High+Peak+Trail+Derbyshire'
+      tag: 'FAMILY ADVENTURE',
+      title: 'Gulliver\'s Kingdom & Farm Park',
+      desc: 'A fun family day out with rides for younger visitors at Gulliver\'s Kingdom, or meet the animals at Matlock Farm Park.',
+      distance: '3.0 miles',
+      time: '9 min drive',
+      image: '/web/sc_1785924014_1205377_3.webp',
+      mapsUrl: 'https://maps.google.com/?q=Gullivers+Kingdom+Matlock+Bath'
     }
   ],
-  towns: [
+  daytrips: [
     {
       id: 9,
-      tag: 'MATLOCK',
-      title: 'Matlock Town & Crown Square',
-      desc: 'Vibrant historic spa market town filled with independent bakeries, vintage antiquaries, and riverside bistros.',
-      distance: '1.2 miles',
-      time: '4 min drive',
-      image: '/images/hero_cottage.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Crown+Square+Matlock'
-    },
-    {
-      id: 10,
-      tag: 'MATLOCK BATH',
-      title: 'Heights of Abraham & Cable Cars',
-      desc: 'Alpine-style cable cars soaring over the limestone gorge to hilltop caverns, fossil exhibitions, and cliffside cafes.',
-      distance: '2.5 miles',
-      time: '8 min drive',
-      image: '/images/lumsdale_valley.jpg',
-      mapsUrl: 'https://maps.google.com/?q=Heights+of+Abraham+Matlock'
-    },
-    {
-      id: 11,
-      tag: 'BAKEWELL',
-      title: 'Historic Bakewell & Market Town',
-      desc: 'Famed riverside market town on the River Wye, home of original warm almond puddings and Monday livestock markets.',
+      tag: 'HISTORIC MARKET TOWN',
+      title: 'Bakewell',
+      desc: 'Head to Bakewell for its historic streets, traditional buildings, independent courtyard shops, and famous local character.',
       distance: '8 miles',
       time: '18 min drive',
-      image: '/images/kitchen.jpg',
+      image: '/web/sc_1785924031_1205377_6.webp',
       mapsUrl: 'https://maps.google.com/?q=Bakewell+Derbyshire'
     },
     {
-      id: 12,
-      tag: 'CHATSWORTH',
-      title: 'Chatsworth House & Parkland',
-      desc: 'Celebrated stately home of the Duke of Devonshire with 105-acre gardens, deer park, and famous farm shop.',
+      id: 10,
+      tag: 'STATELY ESTATE',
+      title: 'Chatsworth House',
+      desc: 'Visit Chatsworth House and spend the day exploring its magnificent stately estate, grand gardens and surrounding countryside.',
       distance: '9.5 miles',
       time: '20 min drive',
-      image: '/images/bedroom_master.jpg',
+      image: '/web/sc_1786456245_1205377_27.webp',
       mapsUrl: 'https://maps.google.com/?q=Chatsworth+House+Bakewell'
+    },
+    {
+      id: 11,
+      tag: 'UNESCO WORLD HERITAGE',
+      title: 'Cromford Mill',
+      desc: 'Discover Cromford Mill and the fascinating industrial heritage of the Derwent Valley Mills UNESCO World Heritage Site.',
+      distance: '3.2 miles',
+      time: '9 min drive',
+      image: '/web/sc_1785924104_1205377_20.webp',
+      mapsUrl: 'https://maps.google.com/?q=Cromford+Mills+Matlock'
+    },
+    {
+      id: 12,
+      tag: 'PEAK CAVERNS & CASTLE',
+      title: 'Castleton',
+      desc: 'Venture to Castleton, surrounded by spectacular Peak District scenery and home to Peak Cavern, Speedwell Cavern and Peveril Castle.',
+      distance: '21 miles',
+      time: '35 min drive',
+      image: '/web/sc_1786456264_1205377_30.webp',
+      mapsUrl: 'https://maps.google.com/?q=Castleton+Hope+Valley'
     }
   ]
 };
 
 export default function CategorizedEscapesSection({ onOpenBooking }) {
-  const [activeTab, setActiveTab] = useState('waterfalls');
+  const [activeTab, setActiveTab] = useState('walks');
 
-  const currentItems = escapesData[activeTab] || escapesData.waterfalls;
+  const currentItems = escapesData[activeTab] || escapesData.walks;
 
   return (
     <section id="escapes" className="escapes-section section-padding">
       <div className="container-wide">
         
-        {/* Emarat-style Header */}
+        {/* Section Header */}
         <div className="escapes-header">
           <div className="header-text-group">
-            <span className="eyebrow">EXPLORE DERBYSHIRE</span>
-            <h2 className="escapes-title font-serif">Curated Local Escapes &amp; Trails</h2>
+            <span className="eyebrow">STEP OUTSIDE AND START EXPLORING</span>
+            <h2 className="escapes-title font-serif">The Peak District is Waiting</h2>
             <p className="escapes-subtitle">
-              From romantic waterfall gorges directly outside your gate to stately homes and country taverns.
+              You don't have to travel far to find beautiful countryside. From the cottage, you're ideally placed to explore Lumsdale Valley, local landmarks, and the best of Derbyshire.
             </p>
           </div>
 

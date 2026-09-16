@@ -1,33 +1,33 @@
 import React from 'react';
-import { ArrowUpRight, Bed, Bath, Utensils } from 'lucide-react';
+import { ArrowUpRight, Bed, Flame, Utensils } from 'lucide-react';
 import { tracker } from '../services/analytics';
 
 export default function LuxuryRedefinedSection({ onExploreRooms }) {
   const cards = [
     {
       id: 'bed',
-      title: 'Master Double Sanctuary',
-      subtitle: 'Egyptian Cotton & Valley Mist',
-      image: '/images/bedroom_master.jpg',
+      title: 'Sleep Well. Wake Refreshed.',
+      subtitle: 'Two Bedrooms &bull; Smart TVs',
+      image: '/web/sc_1785924057_1205377_11.webp',
       icon: Bed,
-      linkText: 'View Bed Chambers'
+      linkText: 'View Bedrooms'
     },
     {
-      id: 'bath',
-      title: 'Heritage Blue Roll-Top Bath',
-      subtitle: 'Clawfoot Soaking & Rain Shower',
-      image: '/images/bathroom.jpg',
-      icon: Bath,
+      id: 'living',
+      title: 'Cosy Evenings by the Hearth',
+      subtitle: 'Woodburning Stove & Relaxing Lounge',
+      image: '/web/sc_1785924019_1205377_4.webp',
+      icon: Flame,
       isCenterWithButton: true,
-      linkText: 'Explore All Spaces'
+      linkText: 'Explore Spaces'
     },
     {
       id: 'kitchen',
-      title: 'Bespoke Shaker Kitchen',
-      subtitle: 'Belfast Sink & Farmhouse Dining',
-      image: '/images/kitchen.jpg',
+      title: 'Start the Day Your Way',
+      subtitle: 'Kitchen/Diner & Modern Facilities',
+      image: '/web/sc_1785924051_1205377_10.webp',
       icon: Utensils,
-      linkText: 'View Country Kitchen'
+      linkText: 'View Kitchen'
     }
   ];
 
@@ -35,15 +35,14 @@ export default function LuxuryRedefinedSection({ onExploreRooms }) {
     <section className="luxury-redefined-section section-padding">
       <div className="container-wide">
         
-        {/* Large Overlapping Display Heading (Emarat Style) */}
+        {/* Large Overlapping Display Heading */}
         <div className="luxury-header">
-          <span className="eyebrow-gold">SIGNATURE SPACES</span>
+          <span className="eyebrow-gold">CHARACTER &amp; COMFORT</span>
           <h2 className="luxury-title font-serif">
-            Country Luxury Redefined
+            Thoughtful Spaces for Memorable Escapes
           </h2>
           <p className="luxury-subtitle">
-            An elevated rural escape where authentic Derbyshire architectural character meets 
-            contemporary boutique craftsmanship.
+            From original exposed stone walls to modern comforts, every room is created for relaxation after days exploring the Peak District.
           </p>
         </div>
 

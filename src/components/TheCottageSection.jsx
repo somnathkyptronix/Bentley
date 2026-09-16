@@ -10,90 +10,90 @@ const spaces = [
     id: 'living',
     title: 'The Living Room',
     subtitle: 'Cast-iron stove & candlelit evenings',
-    image: '/images/living_room.jpg',
+    image: '/web/sc_1785924019_1205377_4.webp',
     lead: 'The heart of the cottage — where muddy boots come off and time slows down.',
-    description: 'Sink into the deep sage wool sofa as dry Derbyshire birch logs crackle in the original stone inglenook. Soft lamplight warms the exposed timber ceiling, while an artisan woven throw and steaming mug of tea wait on the low oak table. Ideal for curling up with a book, enjoying family board games, or unwinding with a film after climbing the valley gorge.',
+    description: 'Sink into the deep leather sofa as dry Derbyshire logs crackle in the original stone fireplace with woodburning stove. Soft warm lighting illuminates the characterful exposed stone wall, while a steaming mug of tea waits on the table. Ideal for curling up with a book, enjoying family board games, or unwinding with a film on the Smart TV after exploring the valley.',
     highlights: [
-      'Cast-iron wood-burning stove with complimentary kiln-dried logs & kindling',
-      'Plush deep-seated sofa, vintage armchair & woven woolen throws',
-      '43" 4K Smart TV with Netflix, BBC iPlayer & streaming apps',
-      'Curated library of Peak District walking maps, local nature books & board games',
-      'Dedicated cosy hound bed and fleece blanket for your dog'
+      'Cast-iron woodburning stove with complimentary dry seasoned logs',
+      'Plush deep-seated leather seating and cosy ambient lighting',
+      'Smart TV with Netflix, BBC iPlayer & streaming entertainment',
+      'Curated library of Peak District walking maps and board games',
+      'One well-behaved pet warmly welcome with countryside walks nearby'
     ]
   },
   {
     id: 'kitchen',
     title: 'Country Kitchen & Dining',
-    subtitle: 'Farmhouse table & morning light',
-    image: '/images/kitchen.jpg',
-    lead: 'Bespoke shaker craftsmanship designed for leisurely country breakfasts and shared suppers.',
-    description: 'Golden morning light filters through the cottage casement windows as you brew fresh cafetière coffee. Featuring bespoke sage cabinetry, solid oak worktops, a classic deep Belfast ceramic sink, and an antique pine farmhouse dining table that seats four comfortably. Fully equipped with modern culinary touches for cooking fresh produce picked up from Bakewell farmers market.',
+    subtitle: 'Sage shaker kitchen & Belfast sink',
+    image: '/web/sc_1785924051_1205377_10.webp',
+    lead: 'Bespoke sage shaker cabinetry designed for leisurely country breakfasts and shared suppers.',
+    description: 'Golden morning light filters through the cottage casement windows as you brew fresh cafetière coffee. Featuring bespoke sage green shaker cabinetry, solid wooden worktops, a classic deep Belfast ceramic sink, electric oven, gas hob, microwave, dishwasher, and washing machine. Fully equipped for cooking delicious meals together.',
     highlights: [
-      'Solid oak worktops with deep ceramic Belfast sink overlooking the valley',
-      'Full modern oven, ceramic induction hob, microwave & quiet dishwasher',
-      'Cafetière coffee press with fresh locally roasted Peak District blend',
-      'Pine farmhouse dining table comfortably seating four guests',
-      'Derbyshire Welcome Hamper: local oatcakes, farm butter, jam & artisan cider'
+      'Bespoke sage green shaker units with classic Belfast ceramic sink',
+      'Electric oven, gas hob, microwave, fridge/freezer & quiet dishwasher',
+      'Washing machine, electric kettle and toaster for easy stays',
+      'Dining table positioned beside the stone archway seating four guests',
+      'Walking distance to Matlock town bakeries, butchers and markets'
     ]
   },
   {
     id: 'double-bed',
     title: 'Master Double Bedroom',
-    subtitle: 'Egyptian cotton & valley silence',
-    image: '/images/bedroom_master.jpg',
-    lead: 'Wake up to birdsong and panoramic views of mist rising over Upper Lumsdale.',
-    description: 'A sanctuary of deep, uninterrupted rest. Features a handcrafted king-sized wooden bed dressed with crisp 400-thread-count Egyptian cotton linens, a textured wool runner, and hypoallergenic cloud-soft pillows. An authentic exposed gritstone feature wall and antique bedside reading lamps create an intimate, timeless atmosphere.',
+    subtitle: 'Crisp linens & peaceful valley rest',
+    image: '/web/sc_1785924057_1205377_11.webp',
+    lead: 'A peaceful sanctuary designed for deep, restorative sleep after active days in Derbyshire.',
+    description: 'A sanctuary of deep, uninterrupted rest. Features a handcrafted solid wooden double bed dressed with fresh, comfortable bed linens and fluffy towels. Equipped with a dedicated Smart TV on the chest of drawers so you can wind down in comfort before sleep.',
     highlights: [
-      'King-sized artisan bed with deep pocket-sprung orthopaedic mattress',
-      'Crisp white 400-thread-count Egyptian cotton bed linens & wool runner',
-      'Sash window framing unobstructed views across the Derbyshire hillside',
-      'Exposed heritage stone wall and original heavy timber ceiling beam',
-      'Ample handcrafted wooden wardrobe and vintage luggage bench'
+      'Solid handcrafted wooden double bed with comfortable mattress',
+      'Dedicated bedroom Smart TV for cosy bedtime streaming',
+      'Crisp bed linens and plush fresh towels provided for all guests',
+      'Peaceful, quiet countryside setting in Upper Lumsdale',
+      'Full wardrobe storage and bedside reading lamps'
     ]
   },
   {
     id: 'twin-bed',
     title: 'Charming Twin Bedroom',
     subtitle: 'Flexible comfort for family or friends',
-    image: '/images/bedroom_twin.jpg',
-    lead: 'A light-filled haven styled with warm checked wool blankets and botanical prints.',
-    description: 'Equally welcoming for children, friends, or walking companions. Two solid oak single beds dressed in soft cotton sheets and classic checked sage blankets. Peaceful woodland views from the window make waking up a joy, with gentle natural light and bedside reading sconces for quiet bedtime stories.',
+    image: '/web/sc_1785924072_1205377_14.webp',
+    lead: 'A light-filled haven styled with warm accents, ideal for children, friends or walking companions.',
+    description: 'Equally welcoming for children, friends, or family travelling together. Two solid single beds dressed in soft cotton sheets with cheerful accent cushions. Includes a wall-mounted Smart TV so everyone can enjoy their own favourite entertainment.',
     highlights: [
-      'Two full-size single beds with comfortable premium pocket-sprung mattresses',
-      'Sage green checked British wool throws & plush feather-down pillows',
-      'Cottage sash window looking out onto ancient oak and beech trees',
-      'Solid oak chest of drawers and vintage bedside lamp with USB charging',
-      'Can accommodate travel cot on request for travelling with infants'
+      'Two comfortable full-size single beds with supportive mattresses',
+      'Wall-mounted Smart TV with streaming capabilities',
+      'Travel cot, highchair and stairgate available for young families',
+      'Peaceful residential setting in Upper Lumsdale',
+      'Bright natural daylight and bedside lighting'
     ]
   },
   {
-    id: 'bathroom',
-    title: 'Heritage Bathroom',
-    subtitle: 'Freestanding roll-top tub & rain shower',
-    image: '/images/bathroom.jpg',
-    lead: 'Soak away tired trail legs in a deep heritage blue roll-top bath.',
-    description: 'Step onto warm flagstone tiles and enjoy the restorative ritual of a hot bath. Featuring an authentic cast-iron roll-top clawfoot tub painted in deep heritage blue with polished brass taps, plus a separate glass-enclosed rainfall shower. Fluffy oversized white bath towels and botanical bath infusions add a boutique hotel touch.',
+    id: 'dining',
+    title: 'Dining Area & Period Archway',
+    subtitle: 'Exposed stone arch & shared meal times',
+    image: '/web/sc_1785924031_1205377_6.webp',
+    lead: 'Gather around the dining table beneath authentic exposed stone arches.',
+    description: 'Framed by a striking exposed gritstone archway, the dining area connects the warmth of the living room with the shaker kitchen. A solid wooden dining table and comfortable chairs offer the ideal setting for leisurely Derbyshire breakfasts, holiday planning over maps, or relaxed evening meals.',
     highlights: [
-      'Freestanding cast-iron roll-top bath with brass handheld shower attachment',
-      'Walk-in rainfall shower with stone subway tiles and generous water pressure',
-      'Heated towel radiator with generous plush bath sheets and bathrobes',
-      'Complimentary organic Bramley botanical hand wash, body wash & shampoo',
-      'Natural light from frosted cottage sash window'
+      'Handcrafted wooden dining table with seating for four guests',
+      'Striking original exposed gritstone archway connecting living & kitchen',
+      'Abundant natural light flowing through cottage casement windows',
+      'Perfect for board game tournaments and slow morning coffees',
+      'Located adjacent to the fitted kitchen for effortless serving'
     ]
   },
   {
     id: 'garden',
     title: 'Private Garden & Patio',
-    subtitle: 'Enclosed stone terrace & sunset birdsong',
-    image: '/images/garden_patio.jpg',
+    subtitle: 'Enclosed stone terrace & morning coffee',
+    image: '/web/sc_1786456245_1205377_27.webp',
     lead: 'Your own private sun-trap facing the tranquil Derbyshire rolling hills.',
-    description: 'Bordered by traditional limestone dry stone walls and overflowing with fragrant lavender, climbing roses, and hydrangeas. A weathered teak outdoor dining table invites long al fresco lunches and chilled glasses of wine as the sun sets behind the hills. Fully enclosed and secure, so your dog can safely sniff and sunbathe.',
+    description: 'Step outside and enjoy your private patio garden. It is a lovely place to start the morning slowly with a cup of coffee or sit back after a day exploring the countryside. Outdoor bistro furniture means you can make the most of the garden whenever the weather allows. Please note there are stone steps leading down to the patio.',
     highlights: [
-      'Fully enclosed dry stone walled garden — secure for dogs and toddlers',
-      'Teak dining table & four armchairs with weather-resistant cushions',
-      'Private charcoal barbecue for warm summer evening cookouts',
-      'Warm exterior festoon lanterns for magical candlelit al fresco dining',
-      'Dedicated warm-water outdoor hose for washing muddy boots and paws'
+      'Private enclosed rear patio with outdoor bistro table and chairs',
+      'Picturesque stone steps with sturdy safety handrail',
+      'Peaceful backdrop of drystone walls and green Derbyshire hills',
+      'Sunny spot for morning coffees and evening drinks',
+      'Enclosed outdoor area for your four-legged companion'
     ]
   }
 ];

@@ -11,7 +11,7 @@ export const offersData = [
     savingsBadge: '15% Off + Fireside Hamper',
     promoCode: 'AUTUMN15',
     validity: 'Stays through 30 Nov 2026',
-    image: '/images/living_room.jpg',
+    image: '/web/sc_1785924019_1205377_4.webp',
     lead: 'Watch the valley foliage turn amber and gold from your cosy cottage hearth.',
     inclusions: [
       '15% direct booking savings on 3+ night stays',
@@ -28,7 +28,7 @@ export const offersData = [
     savingsBadge: 'Includes Late 1pm Sunday Checkout',
     promoCode: 'WEEKENDESC',
     validity: 'Available all year round',
-    image: '/images/hero_cottage.jpg',
+    image: '/web/sc_1785924000_1205377_1.webp',
     lead: 'Leave work behind on Friday and linger without rushing on Sunday.',
     inclusions: [
       '3 nights (Friday 3:00 PM to Monday 10:00 AM)',
@@ -45,7 +45,7 @@ export const offersData = [
     savingsBadge: '4 Nights for the Price of 3',
     promoCode: 'MIDWEEK4',
     validity: 'Mon-Fri stays',
-    image: '/images/kitchen.jpg',
+    image: '/web/sc_1785924036_1205377_7.webp',
     lead: 'Enjoy the uncrowded hills, tranquil valley gorge, and remote work peace.',
     inclusions: [
       '4 full nights for the price of 3 (Mon-Fri)',
@@ -62,7 +62,7 @@ export const offersData = [
     savingsBadge: 'Zero Dog Surcharge + VIP Hamper',
     promoCode: 'DOGFREE',
     validity: 'All seasons',
-    image: '/images/garden_patio.jpg',
+    image: '/web/sc_1786456245_1205377_27.webp',
     lead: 'Because the best walks in life are taken with four paws by your side.',
     inclusions: [
       'Waived pet fee for up to 2 well-behaved dogs',
@@ -79,7 +79,7 @@ export const offersData = [
     savingsBadge: 'Instant 15% Off Available Dates',
     promoCode: 'LAST15',
     validity: 'Valid within 14 days of arrival',
-    image: '/images/bedroom_master.jpg',
+    image: '/web/sc_1785924057_1205377_11.webp',
     lead: 'Spontaneous escapes are often the most memorable.',
     inclusions: [
       '15% instant reduction on unreserved dates',
@@ -96,7 +96,7 @@ export const offersData = [
     savingsBadge: 'Unlimited Logs & Festive Treats',
     promoCode: 'WINTER26',
     validity: '1 Dec 2026 – 28 Feb 2027',
-    image: '/images/living_room.jpg',
+    image: '/web/sc_1785924014_1205377_3.webp',
     lead: 'Frosty morning rambles followed by roaring fires, wool blankets and hot cocoa.',
     inclusions: [
       'Unlimited kiln-dried hardwood firewood during your stay',

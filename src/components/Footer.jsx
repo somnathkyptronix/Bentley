@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Calendar, Heart, ShieldCheck, ExternalLink, X, MessageSquare } from 'lucide-react';
 import { tracker } from '../services/analytics';
 
-export default function Footer({ onOpenBooking, onNavigate }) {
+export default function Footer({ onOpenBooking, onNavigate, onOpenAdmin, onOpenGuest }) {
   const [activeModal, setActiveModal] = useState(null); // 'privacy', 'cookie', 'terms'
 
   const handleLink = (id) => {
@@ -53,8 +53,7 @@ export default function Footer({ onOpenBooking, onNavigate }) {
               </div>
 
               <p className="footer-manifesto">
-                A cosy two-bedroom English countryside retreat near Matlock and the Peak District, 
-                suitable for couples, small families and guests travelling with a dog.
+                A characterful two-bedroom holiday cottage in Matlock, Derbyshire, created for memorable escapes with the people you love.
               </p>
               
               <div className="footer-address-box">
@@ -78,13 +77,12 @@ export default function Footer({ onOpenBooking, onNavigate }) {
             <div className="footer-col">
               <h4 className="footer-col-title font-serif">THE COTTAGE</h4>
               <ul className="footer-links-list">
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">The Living Room</button></li>
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">Country Kitchen</button></li>
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">Master Double Bedroom</button></li>
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">Charming Twin Room</button></li>
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">Heritage Roll-Top Bath</button></li>
-                <li><button onClick={() => handleLink('spaces')} className="footer-link">Enclosed Garden Patio</button></li>
-                <li><button onClick={() => handleLink('about')} className="footer-link">Design &amp; Philosophy</button></li>
+                <li><button onClick={() => handleLink('spaces')} className="footer-link">The Sitting Room</button></li>
+                <li><button onClick={() => handleLink('spaces')} className="footer-link">Kitchen/Diner</button></li>
+                <li><button onClick={() => handleLink('spaces')} className="footer-link">Double &amp; Twin Bedrooms</button></li>
+                <li><button onClick={() => handleLink('spaces')} className="footer-link">Private Patio Garden</button></li>
+                <li><button onClick={() => handleLink('amenities')} className="footer-link">Amenities &amp; Good to Know</button></li>
+                <li><button onClick={() => handleLink('about')} className="footer-link">A Place to Feel at Home</button></li>
               </ul>
             </div>
 
@@ -102,10 +100,11 @@ export default function Footer({ onOpenBooking, onNavigate }) {
               </ul>
             </div>
 
-            {/* Col 4: Reservations */}
+            {/* Col 4: Reservations & Extras */}
             <div className="footer-col">
-              <h4 className="footer-col-title font-serif">RESERVATIONS</h4>
+              <h4 className="footer-col-title font-serif">RESERVATIONS &amp; EXTRAS</h4>
               <ul className="footer-links-list">
+                <li><button onClick={() => handleLink('enhance-stay')} className="footer-link">Enhance Your Stay (Extras &amp; Services)</button></li>
                 <li><button onClick={() => handleLink('offers')} className="footer-link">Special Offers &amp; Rates</button></li>
                 <li><button onClick={() => handleLink('offers')} className="footer-link">Autumn in the Peaks</button></li>
                 <li><button onClick={() => handleLink('offers')} className="footer-link">Weekend Escape (Fri-Mon)</button></li>
@@ -188,6 +187,10 @@ export default function Footer({ onOpenBooking, onNavigate }) {
               </span>
 
               <div className="policy-links-row">
+                <button onClick={() => (onOpenGuest ? onOpenGuest() : handleLink('enhance-stay'))} className="policy-link-btn">Guest Concierge Hub</button>
+                <span>&bull;</span>
+                <button onClick={() => (onOpenAdmin ? onOpenAdmin() : (window.location.hash = '#admin'))} className="policy-link-btn">Owner / Admin Portal</button>
+                <span>&bull;</span>
                 <button onClick={() => setActiveModal('privacy')} className="policy-link-btn">Privacy Policy</button>
                 <span>&bull;</span>
                 <button onClick={() => setActiveModal('cookie')} className="policy-link-btn">Cookie Policy</button>

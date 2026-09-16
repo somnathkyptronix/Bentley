@@ -7,8 +7,8 @@ export default function ConnectivitySection({ onOpenBooking }) {
     <section id="connectivity" className="connectivity-section">
       <div className="connectivity-bg-wrapper">
         <img 
-          src="/images/peak_district.jpg" 
-          alt="Scenic Peak District roads and rolling hills" 
+          src="/web/sc_1786456264_1205377_30.webp" 
+          alt="Scenic Peak District and Lumsdale Valley hills" 
           className="connectivity-bg-img"
           loading="lazy"
         />
@@ -83,8 +83,8 @@ export default function ConnectivitySection({ onOpenBooking }) {
                 <Navigation size={24} />
               </div>
               <div className="circle-badge-text">
-                <span className="circle-tag">PRIVATE ON-SITE PARKING</span>
-                <span className="circle-title font-serif">24/7 Digital Self Check-in</span>
+                <span className="circle-tag">ROADSIDE PARKING</span>
+                <span className="circle-title font-serif">First-Come, First-Served</span>
               </div>
             </div>
           </div>

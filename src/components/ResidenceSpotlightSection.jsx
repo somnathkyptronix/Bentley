@@ -6,81 +6,97 @@ const spaces = [
   {
     id: 'living',
     num: '01',
-    tabName: 'The Living Room',
-    title: 'The Living Room & Inglenook Hearth',
-    sub: 'ACCOMMODATES 4 GUESTS &bull; CAST-IRON STOVE',
-    lead: 'The heart of the cottage — where muddy boots come off and time slows down.',
-    desc: 'Sink into the deep sage wool sofa as dry Derbyshire birch logs crackle in the original stone inglenook. Soft lamplight warms the exposed timber ceiling, while an artisan woven throw and steaming mug of tea wait on the low oak coffee table. Curated library of Peak District walking maps and board games included.',
-    image: '/images/living_room.jpg',
+    tabName: 'Sitting Room',
+    title: 'Cosy Evenings, Happy Memories',
+    sub: 'SITTING ROOM &bull; WOODBURNING STOVE &bull; SMART TV',
+    lead: 'Come together after a day outdoors.',
+    desc: 'There\'s something special about returning to a cosy cottage after exploring the countryside. Gather in the sitting room, get comfortable and enjoy the warmth of the woodburning stove. Put on a film, catch up over a drink or simply enjoy being together without having anywhere else to be. Because sometimes the best part of a holiday is doing absolutely nothing.',
+    image: '/web/sc_1785924019_1205377_4.webp',
     specs: [
-      { label: 'HEARTH & FIRE', value: 'Complimentary Kiln Logs' },
-      { label: 'COMFORT', value: 'Plush Sage Wool Sofa' },
-      { label: 'MEDIA', value: '43" 4K Smart TV & Netflix' },
-      { label: 'PET AMENITIES', value: 'Hound Bed & Fleece Blanket' }
+      { label: 'HEARTH', value: 'Woodburning Stove' },
+      { label: 'MEDIA', value: 'Smart TV & Streaming' },
+      { label: 'ATMOSPHERE', value: 'Original Stone Walls' },
+      { label: 'COMFORT', value: 'Cosy Deep Sofas' }
     ]
   },
   {
-    id: 'master',
+    id: 'double-bed',
     num: '02',
-    tabName: 'Master Bedroom',
-    title: 'Master King Bed Sanctuary',
-    sub: 'KING SIZE BED &bull; DERBYSHIRE VALLEY VIEWS',
-    lead: 'Wake up to morning birdsong and mist rising over Upper Lumsdale.',
-    desc: 'A quiet sanctuary of restorative rest. Features a handcrafted king-sized wooden bed dressed with crisp 400-thread-count Egyptian cotton linens, a textured wool runner, and hypoallergenic cloud-soft pillows. An exposed limestone feature wall and antique bedside reading lamps create an intimate, timeless atmosphere.',
-    image: '/images/bedroom_master.jpg',
+    tabName: 'Double Bedroom',
+    title: 'Sleep Well. Wake Refreshed.',
+    sub: 'DOUBLE BEDROOM &bull; SMART TV &bull; COUPLES ESCAPE',
+    lead: 'Two bedrooms for a comfortable night\'s rest.',
+    desc: 'After a day discovering Derbyshire, you\'ll want somewhere peaceful to recharge. A comfortable double bedroom for couples looking for a relaxing night\'s sleep. Both bedrooms feature Smart TVs, so you can wind down with your favourite shows before bed.',
+    image: '/web/sc_1785924057_1205377_11.webp',
     specs: [
-      { label: 'BED TYPE', value: 'King Pocket-Sprung' },
-      { label: 'LINENS', value: '400TC Egyptian Cotton' },
-      { label: 'OUTLOOK', value: 'Upper Lumsdale Valley' },
-      { label: 'STORAGE', value: 'Handcrafted Oak Wardrobe' }
+      { label: 'BED', value: 'Comfortable Double' },
+      { label: 'MEDIA', value: 'Dedicated Smart TV' },
+      { label: 'COMFORT', value: 'Bed Linen & Towels' },
+      { label: 'HEATING', value: 'Central Heating' }
+    ]
+  },
+  {
+    id: 'twin-bed',
+    num: '03',
+    tabName: 'Twin Bedroom',
+    title: 'Sleep Well. Wake Refreshed.',
+    sub: 'TWIN BEDROOM &bull; SMART TV &bull; FAMILY & FRIENDS',
+    lead: 'Ideal for children, friends or family travelling together.',
+    desc: 'A twin bedroom offering complete comfort for children, walking companions, or friends. Features its own Smart TV so everyone can unwind with their favourite entertainment at the end of an adventurous day.',
+    image: '/web/sc_1785924072_1205377_14.webp',
+    specs: [
+      { label: 'BEDS', value: 'Two Single Beds' },
+      { label: 'MEDIA', value: 'Dedicated Smart TV' },
+      { label: 'FAMILY', value: 'Travel Cot & Highchair' },
+      { label: 'SAFETY', value: 'Stairgate Provided' }
     ]
   },
   {
     id: 'kitchen',
-    num: '03',
-    tabName: 'Country Kitchen',
-    title: 'Country Kitchen & Dining Table',
-    sub: 'FARMHOUSE DINING &bull; BELFAST CERAMIC SINK',
-    lead: 'Bespoke shaker craftsmanship designed for leisurely country breakfasts.',
-    desc: 'Golden morning light streams through cottage casement windows as you brew fresh cafetiere coffee. Features bespoke sage cabinetry, solid oak worktops, a deep Belfast ceramic sink, and a pine farmhouse dining table that seats four comfortably. Includes your Derbyshire Welcome Hamper with local oatcakes and honey.',
-    image: '/images/kitchen.jpg',
-    specs: [
-      { label: 'WORKTOPS', value: 'Solid Oiled Oak' },
-      { label: 'SINK', value: 'Deep Belfast Ceramic' },
-      { label: 'APPLIANCES', value: 'Dishwasher, Hob, Oven' },
-      { label: 'WELCOME', value: 'Derbyshire Artisan Hamper' }
-    ]
-  },
-  {
-    id: 'bath',
     num: '04',
-    tabName: 'Heritage Bathroom',
-    title: 'Heritage Blue Roll-Top Clawfoot Bath',
-    sub: 'CAST-IRON SOAKING &bull; RAINFALL SHOWER',
-    lead: 'Soak away tired trail legs in a deep freestanding roll-top tub.',
-    desc: 'Step onto warm stone tiles and enjoy the restorative ritual of a long bath. Featuring an authentic cast-iron roll-top clawfoot tub painted in deep heritage blue with antique brass taps, plus a separate glass-enclosed rainfall shower. Plush oversized white towels and organic Bramley botanical infusions complete the experience.',
-    image: '/images/bathroom.jpg',
+    tabName: 'Kitchen/Diner',
+    title: 'Start the Day Your Way',
+    sub: 'KITCHEN/DINER &bull; FULLY EQUIPPED &bull; FREEDOM & EASE',
+    lead: 'Breakfast, brunch or a relaxed evening meal.',
+    desc: 'The kitchen/diner gives you the freedom to enjoy your holiday at your own pace. Make breakfast before heading out for a morning walk. Prepare a packed lunch for your Peak District adventure. Or come home, cook together and enjoy a relaxed meal around the table. Fully equipped with an electric oven, gas hob, microwave, fridge/freezer, dishwasher, washing machine, kettle and toaster.',
+    image: '/web/sc_1785924051_1205377_10.webp',
     specs: [
-      { label: 'BATH', value: 'Freestanding Roll-Top' },
-      { label: 'SHOWER', value: 'Walk-In Rain Shower' },
-      { label: 'FIXTURES', value: 'Antique Polished Brass' },
-      { label: 'TOILETRIES', value: 'Organic Bramley Botanicals' }
+      { label: 'COOKING', value: 'Electric Oven & Gas Hob' },
+      { label: 'APPLIANCES', value: 'Microwave, Kettle, Toaster' },
+      { label: 'CLEANING', value: 'Dishwasher & Washer' },
+      { label: 'COOLING', value: 'Fridge / Freezer' }
     ]
   },
   {
     id: 'garden',
     num: '05',
-    tabName: 'Garden Patio',
-    title: 'Private Garden Patio & Terrace',
-    sub: 'ENCLOSED LIMESTONE WALLS &bull; ALFRESCO DINING',
-    lead: 'Your own private sun-trap facing the tranquil Derbyshire rolling hills.',
-    desc: 'Bordered by traditional limestone dry stone walls and overflowing with lavender, climbing roses, and hydrangeas. A weathered teak outdoor dining table invites long al fresco lunches and chilled wine as the sun sets over the valley. Fully enclosed and secure, so your dog can safely roam and sunbathe.',
-    image: '/images/garden_patio.jpg',
+    tabName: 'Patio Garden',
+    title: 'A Little Space Outdoors',
+    sub: 'PRIVATE PATIO &bull; OUTDOOR FURNITURE &bull; FRESH AIR',
+    lead: 'Morning coffee. Evening sunsets. Fresh Derbyshire air.',
+    desc: 'Step outside and enjoy your private patio garden. It\'s a lovely place to start the morning slowly with a cup of coffee or sit back after a day exploring the countryside. Outdoor furniture means you can make the most of the garden whenever the weather allows. Please take care when accessing the garden, as there are steps leading down to it.',
+    image: '/web/sc_1786456245_1205377_27.webp',
     specs: [
-      { label: 'SECURITY', value: 'Fully Enclosed Dry Stone' },
-      { label: 'FURNITURE', value: 'Teak Dining for Four' },
-      { label: 'PAW CARE', value: 'Warm-Water Outdoor Hose' },
-      { label: 'VIEW', value: 'Panoramic Valley Hills' }
+      { label: 'SETTING', value: 'Private Patio Garden' },
+      { label: 'DINING', value: 'Outdoor Furniture Set' },
+      { label: 'CAUTION', value: 'Steps Lead Down to Garden' },
+      { label: 'ATMOSPHERE', value: 'Valley Fresh Air' }
+    ]
+  },
+  {
+    id: 'pet',
+    num: '06',
+    tabName: 'Pet Friendly',
+    title: 'Bring Your Four-Legged Friend',
+    sub: '1 WELL-BEHAVED PET WELCOME &bull; WALKS NEARBY',
+    lead: 'Adventures are better together.',
+    desc: 'Don\'t leave your best friend behind. One well-behaved pet is welcome, giving you the opportunity to enjoy Derbyshire\'s beautiful countryside together. With walking routes and scenic landscapes nearby, there\'s plenty for both two-legged and four-legged guests to discover.',
+    image: '/web/sc_1785924008_1205377_2.webp',
+    specs: [
+      { label: 'PET WELCOME', value: '1 Well-Behaved Pet' },
+      { label: 'WALKS', value: 'Woodland & Waterfall Paths' },
+      { label: 'LOCAL PUBS', value: 'Dog-Friendly Pubs (0.6m)' },
+      { label: 'PATIO', value: 'Enclosed Garden Space' }
     ]
   }
 ];
@@ -93,12 +109,12 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
     <section id="spaces" className="residence-spotlight-section section-padding">
       <div className="container-wide">
         
-        {/* Section Header (Emarat Style) */}
+        {/* Section Header */}
         <div className="spotlight-header">
-          <span className="eyebrow">RESIDENCE OVERVIEW</span>
-          <h2 className="spotlight-title font-serif">The Cottage Specifications &amp; Spaces.</h2>
+          <span className="eyebrow">ROOMS &amp; LIVING SPACES</span>
+          <h2 className="spotlight-title font-serif">Crafted for Memorable Escapes.</h2>
           <p className="spotlight-subtitle">
-            Explore each carefully appointed room at 2 Bentley Bridge Cottages.
+            Characterful rooms, cosy evenings by the fire, and comfortable spaces to feel right at home.
           </p>
         </div>
 

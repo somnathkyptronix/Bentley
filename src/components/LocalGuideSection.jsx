@@ -12,7 +12,7 @@ const attractions = [
     category: 'Walking & Nature',
     distance: '300 metres',
     time: '3 min walk from door',
-    image: '/images/lumsdale_valley.jpg',
+    image: '/web/sc_1786456264_1205377_30.webp',
     description: 'A deeply atmospheric wooded gorge featuring cascading waterfalls, mill ponds, and ruins of 18th-century stone watermills. A protected archaeological monument on your doorstep.',
     mapsUrl: 'https://maps.google.com/?q=Lumsdale+Valley+Matlock',
     tag: 'Must Visit'
@@ -23,7 +23,7 @@ const attractions = [
     category: 'Town & Shopping',
     distance: '1.2 miles',
     time: '4 min drive / 20 min walk',
-    image: '/images/hero_cottage.jpg',
+    image: '/web/sc_1785924000_1205377_1.webp',
     description: 'Bustling historic market town with artisan independent bakeries, vintage boutiques, Hall Leys riverside park, and lively farmers markets.',
     mapsUrl: 'https://maps.google.com/?q=Crown+Square+Matlock+Derbyshire',
     tag: 'Local Town'
@@ -34,7 +34,7 @@ const attractions = [
     category: 'Family & Heritage',
     distance: '2.5 miles',
     time: '8 min drive',
-    image: '/images/peak_district.jpg',
+    image: '/web/sc_1786456238_1205377_26.webp',
     description: 'Famous Victorian spa resort known as "Little Switzerland". Ride cable cars over the limestone gorge to hilltop cavern tours, fossil gardens, and cliff-edge cafe terraces.',
     mapsUrl: 'https://maps.google.com/?q=Heights+of+Abraham+Matlock+Bath',
     tag: 'Attraction'
@@ -45,7 +45,7 @@ const attractions = [
     category: 'Dining & Heritage',
     distance: '8 miles',
     time: '18 min drive',
-    image: '/images/kitchen.jpg',
+    image: '/web/sc_1785924036_1205377_7.webp',
     description: 'Picturesque riverside market town on the River Wye. Home to the original 1860 Old Original Bakewell Pudding Shop, courtyard cafes, and Monday livestock market.',
     mapsUrl: 'https://maps.google.com/?q=Bakewell+Derbyshire',
     tag: 'Foodie Favourite'
@@ -56,7 +56,7 @@ const attractions = [
     category: 'Historic Sights',
     distance: '9.5 miles',
     time: '20 min drive',
-    image: '/images/garden_patio.jpg',
+    image: '/web/sc_1785924117_1205377_22.webp',
     description: 'The celebrated stately home of the Duke and Duchess of Devonshire. Grand gilded state rooms, 105-acre gardens with gravity-fed cascade fountain, and world-renowned farm shop.',
     mapsUrl: 'https://maps.google.com/?q=Chatsworth+House+Bakewell',
     tag: 'Iconic Estate'
@@ -67,7 +67,7 @@ const attractions = [
     category: 'Country Pubs',
     distance: '3.5 miles',
     time: '9 min drive',
-    image: '/images/living_room.jpg',
+    image: '/web/sc_1785924019_1205377_4.webp',
     description: 'Traditional 15th-century gritstone country inn with roaring open fires, cask ales from Peak Ales brewery, and award-winning local Derbyshire venison and beef pies.',
     mapsUrl: 'https://maps.google.com/?q=Country+Pubs+Matlock+Derbyshire',
     tag: 'Cosy Pub'
@@ -78,7 +78,7 @@ const attractions = [
     category: 'Walking & Nature',
     distance: '10 miles',
     time: '22 min drive',
-    image: '/images/peak_district.jpg',
+    image: '/web/sc_1786456245_1205377_27.webp',
     description: 'Traffic-free 8.5-mile trail along the former Midland Railway through dramatic limestone tunnels and soaring over the Monsal Dale viaduct. Bike hire available.',
     mapsUrl: 'https://maps.google.com/?q=Monsal+Trail+Bakewell',
     tag: 'Scenic Trail'
@@ -89,7 +89,7 @@ const attractions = [
     category: 'Historic Sights',
     distance: '3.2 miles',
     time: '9 min drive',
-    image: '/images/lumsdale_valley.jpg',
+    image: '/web/sc_1786348558_1205377_23.webp',
     description: 'UNESCO World Heritage Site where Sir Richard Arkwright birthed the modern factory system in 1771. Canal boat trips, artisan bookshops, and waterside coffee.',
     mapsUrl: 'https://maps.google.com/?q=Cromford+Mills+Matlock',
     tag: 'UNESCO Heritage'

@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Phone, Mail, MessageSquare, ChevronDown, Sparkles } from 'lucide-react';
+import { Menu, X, Calendar, Phone, Mail, MessageSquare, ChevronDown, Sparkles, ShoppingCart, User } from 'lucide-react';
 import { tracker } from '../services/analytics';
+import { extrasService } from '../services/extrasService';
 
-export default function Header({ onOpenBooking, onNavigate }) {
+export default function Header({ onOpenBooking, onNavigate, onOpenAdmin, onOpenGuest }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cottageDropdownOpen, setCottageDropdownOpen] = useState(false);
   const [spacesDropdownOpen, setSpacesDropdownOpen] = useState(false);
+  const [basketCount, setBasketCount] = useState(extrasService.getBasketCount());
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    const unsubscribe = extrasService.subscribe(() => {
+      setBasketCount(extrasService.getBasketCount());
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      unsubscribe();
+    };
   }, []);
 
   const handleNavClick = (sectionId) => {
@@ -23,8 +33,16 @@ export default function Header({ onOpenBooking, onNavigate }) {
     if (onNavigate) {
       onNavigate(sectionId);
     } else {
-      const el = document.getElementById(sectionId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navHeight = 72;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = Math.max(0, elementPosition + window.pageYOffset - navHeight);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -52,10 +70,7 @@ export default function Header({ onOpenBooking, onNavigate }) {
                 alt="2 Bentley Bridge Cottages Logo" 
                 className="brand-logo-badge"
               />
-              <div className="brand-text">
-                <span className="brand-name font-serif">2 BENTLEY BRIDGE</span>
-                <span className="brand-location">UPPER LUMSDALE &bull; MATLOCK &bull; PEAKS</span>
-              </div>
+              <span className="brand-name font-serif">2 BENTLEY BRIDGE</span>
             </a>
 
             {/* Desktop Navigation */}
@@ -116,6 +131,16 @@ export default function Header({ onOpenBooking, onNavigate }) {
                 </li>
 
                 <li>
+                  <button onClick={() => handleNavClick('amenities')} className="nav-link">
+                    Amenities
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNavClick('enhance-stay')} className="nav-link" style={{ color: 'var(--eys-gold, #c5a880)', fontWeight: 700 }}>
+                    Enhance Stay
+                  </button>
+                </li>
+                <li>
                   <button onClick={() => handleNavClick('gallery')} className="nav-link">
                     Gallery
                   </button>
@@ -143,8 +168,20 @@ export default function Header({ onOpenBooking, onNavigate }) {
               </ul>
             </nav>
 
-            {/* Header Right Action - Emarat Pill Button */}
+            {/* Header Right Action - Emarat Pill Button & Basket */}
             <div className="header-actions">
+              <button 
+                onClick={() => {
+                  if (onOpenGuest) onOpenGuest();
+                  else window.location.hash = '#guest';
+                }}
+                className="header-guest-login-btn"
+                title="Guest Concierge Login"
+              >
+                <User size={14} />
+                <span>Guest Login</span>
+              </button>
+
               <button 
                 id="header-check-availability-btn"
                 onClick={handleBookingClick} 
@@ -201,10 +238,7 @@ export default function Header({ onOpenBooking, onNavigate }) {
           <div className="mobile-drawer-header">
             <div className="mobile-brand">
               <img src="/logo.jpg" alt="Logo" className="brand-logo-badge small" />
-              <div>
-                <div className="brand-name font-serif">2 Bentley Bridge</div>
-                <div className="brand-location">Upper Lumsdale, Matlock</div>
-              </div>
+              <div className="brand-name font-serif">2 Bentley Bridge</div>
             </div>
             <button 
               onClick={() => setMobileMenuOpen(false)}
@@ -219,12 +253,38 @@ export default function Header({ onOpenBooking, onNavigate }) {
             <button onClick={() => handleNavClick('home')} className="mobile-nav-link">Home</button>
             <button onClick={() => handleNavClick('about')} className="mobile-nav-link">The Cottage &amp; Philosophy</button>
             <button onClick={() => handleNavClick('spaces')} className="mobile-nav-link">Bedrooms &amp; Spaces</button>
+            <button onClick={() => handleNavClick('amenities')} className="mobile-nav-link">Amenities &amp; Essentials</button>
+            <button onClick={() => handleNavClick('enhance-stay')} className="mobile-nav-link" style={{ color: 'var(--eys-gold, #c5a880)', fontWeight: 700 }}>
+              ✨ Enhance Your Stay (Extras &amp; Experiences)
+            </button>
             <button onClick={() => handleNavClick('gallery')} className="mobile-nav-link">Visual Gallery</button>
             <button onClick={() => handleNavClick('escapes')} className="mobile-nav-link">Curated Area Escapes</button>
             <button onClick={() => handleNavClick('connectivity')} className="mobile-nav-link">Location &amp; Connectivity</button>
             <button onClick={() => handleNavClick('offers')} className="mobile-nav-link">Special Offers &amp; Rates</button>
             <button onClick={() => handleNavClick('reviews')} className="mobile-nav-link">Guest Reviews</button>
             <button onClick={() => handleNavClick('enquiry')} className="mobile-nav-link">Direct Booking / Callback</button>
+            <button 
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenGuest) onOpenGuest();
+                else window.location.hash = '#guest';
+              }} 
+              className="mobile-nav-link"
+              style={{ color: '#c5a880', fontWeight: 600 }}
+            >
+              Guest Login
+            </button>
+            <button 
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenAdmin) onOpenAdmin();
+                else window.location.hash = '#admin';
+              }} 
+              className="mobile-nav-link"
+              style={{ color: '#c5a880' }}
+            >
+              Owner / Admin Portal
+            </button>
           </nav>
 
           <div className="mobile-drawer-footer">
@@ -250,20 +310,20 @@ export default function Header({ onOpenBooking, onNavigate }) {
           left: 0;
           right: 0;
           z-index: 100;
-          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
         }
 
         .emarat-header.transparent-top {
-          background: linear-gradient(180deg, rgba(14, 30, 24, 0.82) 0%, rgba(14, 30, 24, 0.35) 65%, transparent 100%);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          padding: 0.85rem 0;
+          background: linear-gradient(180deg, rgba(14, 30, 24, 0.88) 0%, rgba(14, 30, 24, 0.45) 75%, transparent 100%);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          padding: 0.65rem 0;
         }
 
         .emarat-header.scrolled {
           background-color: var(--color-forest);
-          padding: 0.75rem 0;
-          box-shadow: 0 10px 30px rgba(10, 35, 25, 0.35);
+          padding: 0.5rem 0;
+          box-shadow: 0 8px 24px rgba(10, 35, 25, 0.35);
           border-bottom: 1px solid rgba(197, 162, 103, 0.2);
         }
 
@@ -271,71 +331,70 @@ export default function Header({ onOpenBooking, onNavigate }) {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 2rem;
+          gap: 1.25rem;
+          min-height: 44px;
         }
 
         .brand-link {
-          display: flex;
+          display: inline-flex;
           align-items: center;
-          gap: 0.9rem;
+          gap: 0.75rem;
+          text-decoration: none;
+          flex-shrink: 0;
         }
 
         .brand-logo-badge {
-          width: 52px;
-          height: 52px;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
           object-fit: cover;
           border: 2px solid var(--color-gold);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
           transition: transform var(--transition-fast);
+          flex-shrink: 0;
         }
 
         .brand-logo-badge.small {
-          width: 44px;
-          height: 44px;
+          width: 38px;
+          height: 38px;
         }
 
         .brand-link:hover .brand-logo-badge {
           transform: rotate(4deg) scale(1.04);
         }
 
-        .brand-text {
-          display: flex;
-          flex-direction: column;
-        }
-
         .brand-name {
-          font-size: 1.28rem;
+          font-size: 1.16rem;
           letter-spacing: 0.08em;
           color: #FFFFFF;
-          line-height: 1.15;
+          line-height: 1;
+          white-space: nowrap;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .brand-location {
-          font-size: 0.68rem;
-          color: var(--color-gold);
-          letter-spacing: 0.16em;
-          font-weight: 700;
-          text-transform: uppercase;
+          display: inline-block;
         }
 
         .desktop-nav .nav-list {
           display: flex;
           align-items: center;
           list-style: none;
-          gap: 1.5rem;
+          gap: 0.95rem;
+          margin: 0;
+          padding: 0;
         }
 
         .nav-link {
-          font-size: 0.88rem;
+          font-size: 0.83rem;
           font-weight: 500;
           color: #FFFFFF;
-          padding: 0.4rem 0.2rem;
+          padding: 0.35rem 0.15rem;
           position: relative;
           letter-spacing: 0.02em;
+          white-space: nowrap;
           text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
           transition: color var(--transition-fast);
+          background: none;
+          border: none;
+          cursor: pointer;
         }
 
         .nav-link:hover {
@@ -364,7 +423,7 @@ export default function Header({ onOpenBooking, onNavigate }) {
         .dropdown-trigger {
           display: inline-flex;
           align-items: center;
-          gap: 0.3rem;
+          gap: 0.25rem;
         }
 
         .dropdown-caret {
@@ -377,25 +436,29 @@ export default function Header({ onOpenBooking, onNavigate }) {
 
         .dropdown-menu {
           position: absolute;
-          top: 100%;
-          left: -10px;
+          top: calc(100% + 6px);
+          left: 0;
           background-color: var(--color-forest-dark);
           border: 1px solid rgba(197, 162, 103, 0.3);
           border-radius: var(--radius-sm);
-          padding: 0.6rem 0;
+          padding: 0.5rem 0;
           min-width: 220px;
           box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-          animation: fadeIn 0.25s ease;
+          animation: fadeIn 0.2s ease;
+          z-index: 110;
         }
 
         .dropdown-item {
           display: block;
           width: 100%;
           text-align: left;
-          padding: 0.55rem 1.2rem;
+          padding: 0.5rem 1.1rem;
           color: #FFFFFF;
-          font-size: 0.84rem;
-          transition: background var(--transition-fast);
+          font-size: 0.82rem;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: background var(--transition-fast), color var(--transition-fast);
         }
 
         .dropdown-item:hover {
@@ -406,7 +469,49 @@ export default function Header({ onOpenBooking, onNavigate }) {
         .header-actions {
           display: flex;
           align-items: center;
-          gap: 1rem;
+          gap: 0.65rem;
+          flex-shrink: 0;
+        }
+
+        /* Guest Login Pill Button */
+        .header-guest-login-btn {
+          border: 1px solid rgba(197, 168, 128, 0.45);
+          background: rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: #FFFFFF;
+          border-radius: var(--radius-full);
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-size: 0.72rem;
+          font-weight: 600;
+          padding: 0.48rem 0.95rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all var(--transition-smooth);
+        }
+
+        .header-guest-login-btn:hover {
+          background-color: rgba(197, 168, 128, 0.2);
+          border-color: var(--color-gold);
+          color: var(--color-gold);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .scrolled .header-guest-login-btn {
+          border-color: rgba(197, 168, 128, 0.4);
+          background: rgba(255, 255, 255, 0.08);
+          color: #FFFFFF;
+        }
+
+        .scrolled .header-guest-login-btn:hover {
+          border-color: var(--color-gold);
+          background-color: rgba(197, 168, 128, 0.25);
+          color: var(--color-gold);
         }
 
         /* Emarat Pill Border Button */
@@ -417,17 +522,19 @@ export default function Header({ onOpenBooking, onNavigate }) {
           color: #FFFFFF;
           border-radius: var(--radius-full);
           text-transform: uppercase;
-          letter-spacing: 0.16em;
-          font-size: 0.78rem;
+          letter-spacing: 0.12em;
+          font-size: 0.74rem;
           font-weight: 700;
-          padding: 0.7rem 1.6rem;
+          padding: 0.5rem 1.2rem;
+          white-space: nowrap;
+          cursor: pointer;
           transition: all var(--transition-smooth);
         }
 
         .emarat-pill-btn:hover {
           background-color: #FFFFFF;
           color: var(--color-forest);
-          transform: translateY(-2px);
+          transform: translateY(-1px);
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
@@ -444,7 +551,11 @@ export default function Header({ onOpenBooking, onNavigate }) {
         .mobile-toggle {
           display: none;
           color: #FFFFFF;
-          padding: 0.4rem;
+          padding: 0.35rem;
+          background: none;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
         }
 
         /* Floating Right Action Dock (Emarat Style) */
@@ -530,6 +641,9 @@ export default function Header({ onOpenBooking, onNavigate }) {
         .mobile-close-btn {
           color: #FFFFFF;
           padding: 0.3rem;
+          background: none;
+          border: none;
+          cursor: pointer;
         }
 
         .mobile-nav {
@@ -546,6 +660,9 @@ export default function Header({ onOpenBooking, onNavigate }) {
           color: #FFFFFF;
           padding: 0.55rem 0.6rem;
           border-radius: var(--radius-xs);
+          background: none;
+          border: none;
+          cursor: pointer;
           transition: background var(--transition-fast);
         }
 
@@ -569,6 +686,14 @@ export default function Header({ onOpenBooking, onNavigate }) {
           padding: 0.9rem;
           background-color: var(--color-gold);
           color: var(--color-forest-dark);
+          border: none;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          border-radius: 4px;
+          font-weight: 600;
         }
 
         .mobile-quick-contacts {
@@ -583,9 +708,30 @@ export default function Header({ onOpenBooking, onNavigate }) {
           gap: 0.6rem;
           font-size: 0.85rem;
           color: #D2CBC0;
+          text-decoration: none;
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1260px) {
+          .desktop-nav .nav-list {
+            gap: 0.65rem;
+          }
+          .nav-link {
+            font-size: 0.78rem;
+          }
+          .brand-name {
+            font-size: 1.05rem;
+          }
+          .brand-logo-badge {
+            width: 38px;
+            height: 38px;
+          }
+          .emarat-pill-btn {
+            padding: 0.48rem 1rem;
+            font-size: 0.7rem;
+          }
+        }
+
+        @media (max-width: 1140px) {
           .desktop-nav {
             display: none;
           }
@@ -602,16 +748,16 @@ export default function Header({ onOpenBooking, onNavigate }) {
             display: none;
           }
           .brand-name {
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             letter-spacing: 0.04em;
           }
-          .brand-location {
-            font-size: 0.58rem;
-            letter-spacing: 0.08em;
-          }
           .brand-logo-badge {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
+          }
+          .header-guest-login-btn {
+            padding: 0.42rem 0.75rem;
+            font-size: 0.68rem;
           }
           .mobile-drawer {
             width: 88vw;
@@ -626,12 +772,12 @@ export default function Header({ onOpenBooking, onNavigate }) {
           }
         }
 
-        @media (max-width: 380px) {
-          .brand-location {
+        @media (max-width: 400px) {
+          .header-guest-login-btn span {
             display: none;
           }
-          .brand-name {
-            font-size: 0.95rem;
+          .header-guest-login-btn {
+            padding: 0.42rem 0.55rem;
           }
         }
       `}</style>
