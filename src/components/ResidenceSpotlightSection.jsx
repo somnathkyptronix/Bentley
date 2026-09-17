@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Bed, Flame, Bath, Sun, Calendar, ArrowRight, Check, Heart, Shield } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Bed, Flame, Bath, Sun, Calendar, ArrowRight, Check, Heart, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import { tracker } from '../services/analytics';
 
 const spaces = [
@@ -103,7 +103,100 @@ const spaces = [
 
 export default function ResidenceSpotlightSection({ onOpenBooking }) {
   const [activeSpaceId, setActiveSpaceId] = useState('living');
+  const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const tabsBarRef = useRef(null);
+  const tabRefs = useRef({});
+  const pauseTimeoutRef = useRef(null);
+  const touchStartX = useRef(0);
+
   const activeSpace = spaces.find(s => s.id === activeSpaceId) || spaces[0];
+  const currentIndex = spaces.findIndex(s => s.id === activeSpaceId);
+
+  // Detect mobile viewport (<= 768px)
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Pause auto-slide upon user interaction
+  const handleUserInteraction = () => {
+    setIsPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 7000);
+  };
+
+  // Auto-slide ONLY for mobile responsive (cycles through all 6 options automatically)
+  useEffect(() => {
+    if (!isMobile || isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveSpaceId(prevId => {
+        const idx = spaces.findIndex(s => s.id === prevId);
+        const nextIdx = (idx + 1) % spaces.length;
+        return spaces[nextIdx].id;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, isPaused]);
+
+  // Auto-scroll the mobile tabs bar so the active tab is always centered into view
+  useEffect(() => {
+    if (isMobile && tabRefs.current[activeSpaceId] && tabsBarRef.current) {
+      const tabEl = tabRefs.current[activeSpaceId];
+      const container = tabsBarRef.current;
+      const containerWidth = container.offsetWidth;
+      const tabLeft = tabEl.offsetLeft;
+      const tabWidth = tabEl.offsetWidth;
+      const targetScroll = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+
+      container.scrollTo({
+        left: Math.max(0, targetScroll),
+        behavior: 'smooth'
+      });
+    }
+  }, [activeSpaceId, isMobile]);
+
+  const handleNextSpace = () => {
+    handleUserInteraction();
+    setActiveSpaceId(prevId => {
+      const idx = spaces.findIndex(s => s.id === prevId);
+      return spaces[(idx + 1) % spaces.length].id;
+    });
+  };
+
+  const handlePrevSpace = () => {
+    handleUserInteraction();
+    setActiveSpaceId(prevId => {
+      const idx = spaces.findIndex(s => s.id === prevId);
+      return spaces[(idx - 1 + spaces.length) % spaces.length].id;
+    });
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    handleUserInteraction();
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleNextSpace();
+      } else {
+        handlePrevSpace();
+      }
+    }
+  };
 
   return (
     <section id="spaces" className="residence-spotlight-section section-padding">
@@ -119,7 +212,11 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
         </div>
 
         {/* Side-by-Side Split Showcase (Emarat Style) */}
-        <div className="spotlight-split-card">
+        <div 
+          className="spotlight-split-card"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           
           {/* Left Column: Room Photo */}
           <div className="spotlight-media-col">
@@ -130,7 +227,29 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
                 className="spotlight-img"
                 key={activeSpace.id}
               />
-              <span className="spotlight-float-tag font-serif">{activeSpace.num} &bull; {activeSpace.tabName}</span>
+              <span className="spotlight-float-tag font-serif">
+                {activeSpace.num} &bull; {activeSpace.tabName}
+              </span>
+
+              {/* Mobile Slide Arrows */}
+              {isMobile && (
+                <div className="spotlight-mobile-arrows">
+                  <button 
+                    className="spotlight-arrow-btn prev"
+                    onClick={(e) => { e.stopPropagation(); handlePrevSpace(); }}
+                    aria-label="Previous room"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+                  <button 
+                    className="spotlight-arrow-btn next"
+                    onClick={(e) => { e.stopPropagation(); handleNextSpace(); }}
+                    aria-label="Next room"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -173,12 +292,40 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
 
         </div>
 
+        {/* Mobile Slide Progress & Dots */}
+        {isMobile && (
+          <div className="spotlight-mobile-dots-bar">
+            <div className="spotlight-dots-track">
+              {spaces.map((sp) => (
+                <button
+                  key={sp.id}
+                  onClick={() => {
+                    handleUserInteraction();
+                    setActiveSpaceId(sp.id);
+                  }}
+                  className={`spotlight-dot ${activeSpaceId === sp.id ? 'active' : ''}`}
+                  aria-label={`Switch to ${sp.tabName}`}
+                />
+              ))}
+            </div>
+            <span className="spotlight-mobile-counter font-serif">
+              {spaces[currentIndex].num} / 06 &bull; {spaces[currentIndex].tabName}
+            </span>
+          </div>
+        )}
+
         {/* Horizontal Room Switcher Tabs at Bottom (Emarat Style) */}
-        <div className="spotlight-tabs-bar">
+        <div 
+          className="spotlight-tabs-bar"
+          ref={tabsBarRef}
+          onTouchStart={handleUserInteraction}
+        >
           {spaces.map(sp => (
             <button
               key={sp.id}
+              ref={el => { tabRefs.current[sp.id] = el; }}
               onClick={() => {
+                handleUserInteraction();
                 setActiveSpaceId(sp.id);
                 tracker.track('view_residence_tab', { room: sp.tabName });
               }}
@@ -527,6 +674,116 @@ export default function ResidenceSpotlightSection({ onOpenBooking }) {
           .spotlight-actions-row button {
             width: 100%;
             justify-content: center;
+          }
+        }
+      /* Mobile Slide Navigation & Dots */
+        .spotlight-mobile-arrows {
+          display: none;
+        }
+        .spotlight-mobile-dots-bar {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .spotlight-mobile-arrows {
+            display: flex;
+            position: absolute;
+            inset: 0;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0.75rem;
+            pointer-events: none;
+            z-index: 5;
+          }
+          .spotlight-arrow-btn {
+            pointer-events: auto;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(14, 30, 24, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(197, 162, 103, 0.4);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          }
+          .spotlight-arrow-btn:active {
+            transform: scale(0.92);
+            background: var(--color-forest);
+          }
+          
+          .spotlight-mobile-dots-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0.35rem 0.75rem 0.35rem;
+            margin-bottom: 0.15rem;
+          }
+          .spotlight-dots-track {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+          }
+          .spotlight-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background: var(--color-sand);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          .spotlight-dot.active {
+            width: 22px;
+            background: var(--color-gold);
+            border-radius: 4px;
+          }
+          .spotlight-mobile-counter {
+            font-size: 0.78rem;
+            color: var(--color-forest);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+          }
+
+          .spotlight-tabs-bar {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            border-radius: var(--radius-md);
+            scroll-behavior: smooth;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+          }
+          .spotlight-tabs-bar::-webkit-scrollbar {
+            display: none;
+          }
+          .spotlight-tab {
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding: 0.8rem 1.25rem;
+            border-bottom: none;
+            border-right: 1px solid var(--color-sand);
+            transition: all 0.3s ease;
+          }
+          .spotlight-tab.active {
+            background-color: var(--color-forest);
+            color: #FFFFFF;
+          }
+          .spotlight-tab.active .tab-num {
+            color: var(--color-gold);
+          }
+          .spotlight-img {
+            animation: fadeIn 0.45s ease-out;
+          }
+          @keyframes fadeIn {
+            from { opacity: 0.65; transform: scale(1.02); }
+            to { opacity: 1; transform: scale(1); }
           }
         }
       `}</style>
